@@ -1,0 +1,13 @@
+:root {
+  /* Couleurs principales */
+  --color-background: #F5F0E8;      /* Fond crème/sable */
+  --color-text-heading: #1A1A1A;    /* Titre principal (noir profond) */
+  --color-accent: #D4622A;          /* Orange terracotta - CTA, labels */
+  --color-text-body: #3D4A5C;       /* Texte paragraphe (bleu-gris ardoise) */
+  --color-border: #1A1A1A;          /* Contours boutons secondaires */
+  --color-button-text: #FFFFFF;     /* Texte sur bouton orange */
+
+  /* Variantes utiles */
+  --color-accent-hover: #B8501F;    /* Version plus foncée pour hover */
+  --color-background-alt: #FFFFFF;  /* Blanc pur si besoin de contraste */
+}
