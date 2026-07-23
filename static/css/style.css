@@ -1,13 +1,306 @@
-:root {
-  /* Couleurs principales */
-  --color-background: #F5F0E8;      /* Fond crème/sable */
-  --color-text-heading: #1A1A1A;    /* Titre principal (noir profond) */
-  --color-accent: #D4622A;          /* Orange terracotta - CTA, labels */
-  --color-text-body: #3D4A5C;       /* Texte paragraphe (bleu-gris ardoise) */
-  --color-border: #1A1A1A;          /* Contours boutons secondaires */
-  --color-button-text: #FFFFFF;     /* Texte sur bouton orange */
+/* ==========================================================================
+   Soleil Ka — feuille de style
+   Police display : Fraunces (chaleureuse, forte présence pour les titres)
+   Police texte   : Inter (lisible, discrète)
+   ========================================================================== */
 
-  /* Variantes utiles */
-  --color-accent-hover: #B8501F;    /* Version plus foncée pour hover */
-  --color-background-alt: #FFFFFF;  /* Blanc pur si besoin de contraste */
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  /* Couleurs principales (fournies) */
+  --color-background: #F5F0E8;
+  --color-text-heading: #1A1A1A;
+  --color-accent: #D4622A;
+  --color-text-body: #3D4A5C;
+  --color-border: #1A1A1A;
+  --color-button-text: #FFFFFF;
+
+  --color-accent-hover: #B8501F;
+  --color-background-alt: #FFFFFF;
+
+  /* Couleurs complémentaires (footer sombre, cartes, etc.) */
+  --color-footer-bg: #171512;
+  --color-footer-card: #211E19;
+  --color-footer-border: rgba(255, 255, 255, 0.1);
+  --color-text-muted: #9A948A;
+  --color-icon-bg: rgba(212, 98, 42, 0.15);
+
+  /* Typo */
+  --font-display: "Fraunces", Georgia, serif;
+  --font-body: "Inter", "Segoe UI", sans-serif;
+
+  /* Rythme */
+  --radius-s: 0.6rem;
+  --radius-m: 1rem;
+  --radius-full: 999px;
+  --gutter: clamp(1.5rem, 4vw, 4rem);
+}
+
+/* ---------- Reset léger ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--color-background);
+  color: var(--color-text-body);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  color: var(--color-text-heading);
+  margin: 0;
+}
+
+p { margin: 0; }
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img { max-width: 100%; display: block; }
+
+button, input, select, textarea {
+  font-family: var(--font-body);
+  font-size: 1rem;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+  html { scroll-behavior: auto; }
+}
+
+/* ==========================================================================
+   Header / navigation
+   ========================================================================== */
+
+#menu {
+  display: flex;
+  align-items: center;
+  gap: 2.25rem;
+  padding: 1.1rem var(--gutter);
+  background: var(--color-background-alt);
+  border-bottom: 1px solid rgba(26, 26, 26, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* Le logo : premier lien, contient h3 + img */
+#menu > a:first-child {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-right: auto;
+}
+
+#menu > a:first-child h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+#menu > a:first-child img {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  object-fit: cover;
+  order: -1; /* fait passer le logo avant le texte visuellement */
+}
+
+/* Liens de navigation "classiques" (ni logo, ni bouton Don) */
+#menu > a:not(:first-child):not(:last-child) {
+  position: relative;
+  font-weight: 500;
+  color: var(--color-text-heading);
+  padding: 0.35rem 0.1rem;
+  transition: color 0.2s ease;
+}
+
+#menu > a:not(:first-child):not(:last-child)::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0%;
+  height: 2px;
+  background: var(--color-accent);
+  transition: width 0.25s ease;
+}
+
+#menu > a:not(:first-child):not(:last-child):hover {
+  color: var(--color-accent);
+}
+
+#menu > a:not(:first-child):not(:last-child):hover::after {
+  width: 100%;
+}
+
+/* Bouton "Don", dernier lien */
+#menu > a:last-child {
+  margin-left: 1rem;
+  background: var(--color-accent);
+  color: var(--color-button-text);
+  padding: 0.65rem 1.4rem;
+  border-radius: var(--radius-full);
+  font-weight: 600;
+  white-space: nowrap;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+#menu > a:last-child:hover {
+  background: var(--color-accent-hover);
+  transform: translateY(-1px);
+}
+
+@media (max-width: 800px) {
+  #menu {
+    flex-wrap: wrap;
+    row-gap: 0.75rem;
+  }
+  #menu > a:first-child { width: 100%; margin-right: 0; }
+  #menu > a:last-child { margin-left: auto; }
+}
+
+/* ==========================================================================
+   Contenu principal — section de présentation
+   ========================================================================== */
+
+main {
+  padding: clamp(3rem, 6vw, 6rem) var(--gutter);
+}
+
+.presentation {
+  display: grid;
+  grid-template-columns: auto auto 1fr;
+  grid-template-rows: auto auto auto auto;
+  column-gap: 1.25rem;
+  row-gap: 1.25rem;
+  align-items: start;
+  max-width: 1320px;
+  margin: 0 auto;
+}
+
+.presentation h3 {
+  grid-column: 1 / 3;
+  grid-row: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: fit-content;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  background: var(--color-icon-bg);
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-full);
+}
+
+.presentation h3::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-accent);
+}
+
+.presentation h1 {
+  grid-column: 1 / 3;
+  grid-row: 2;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  margin-top: 1.25rem;
+  max-width: 14ch;
+}
+
+.presentation p {
+  grid-column: 1 / 3;
+  grid-row: 3;
+  margin-top: 1.5rem;
+  max-width: 46ch;
+  font-size: 1.05rem;
+}
+
+.presentation p strong,
+.presentation p b {
+  color: var(--color-text-heading);
+}
+
+.presentation .btn {
+  margin-top: 2rem;
+  padding: 0.85rem 1.75rem;
+  border-radius: var(--radius-full);
+  font-weight: 600;
+  text-align: center;
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.presentation .btn:first-of-type {
+  grid-column: 1;
+  grid-row: 4;
+  background: var(--color-accent);
+  color: var(--color-button-text);
+}
+
+.presentation .btn:first-of-type:hover {
+  background: var(--color-accent-hover);
+  transform: translateY(-1px);
+}
+
+.presentation .btn:last-of-type {
+  grid-column: 2;
+  grid-row: 4;
+  background: transparent;
+  color: var(--color-text-heading);
+  border: 1.5px solid var(--color-border);
+}
+
+.presentation .btn:last-of-type:hover {
+  background: var(--color-text-heading);
+  color: var(--color-background-alt);
+}
+
+.presentation img {
+  grid-column: 3;
+  grid-row: 1 / 5;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius-m);
+  box-shadow: 0 20px 45px rgba(26, 26, 26, 0.15);
+}
+
+@media (max-width: 900px) {
+  .presentation {
+    grid-template-columns: 1fr 1fr;
+  }
+  .presentation img {
+    grid-column: 1 / 3;
+    grid-row: 5;
+    margin-top: 2rem;
+    max-height: 420px;
+  }
+}
+
+@media (max-width: 520px) {
+  .presentation .btn {
+    grid-column: 1 / 3;
+  }
+  .presentation .btn:last-of-type { grid-row: 5; }
+  .presentation img { grid-row: 6; }
 }

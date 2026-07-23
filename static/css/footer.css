@@ -1,0 +1,184 @@
+/* ==========================================================================
+   Pied de page
+   ========================================================================== */
+
+footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "info   form"
+    "copy   form";
+  gap: 3rem 4rem;
+  background: var(--color-footer-bg);
+  color: var(--color-background-alt);
+  padding: clamp(3rem, 6vw, 5.5rem) var(--gutter) 3rem;
+}
+
+.footer-contact { grid-area: info; }
+
+.footer-contact h3 {
+  color: var(--color-background-alt);
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.footer-contact h3:not(:first-child) {
+  margin-top: 2.5rem;
+}
+
+.footer-contact .email,
+.footer-contact .tel {
+  margin-bottom: 1.25rem;
+  padding-left: 2.25rem;
+  position: relative;
+}
+
+.footer-contact .email::before,
+.footer-contact .tel::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.1rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background: var(--color-icon-bg);
+}
+
+.footer-contact .email p,
+.footer-contact .tel p {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: 0.35rem;
+}
+
+.footer-contact .email h4,
+.footer-contact .tel h4 {
+  color: var(--color-background-alt);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.footer-contact .socials {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.footer-contact .socials a {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background: var(--color-footer-card);
+  border: 1px solid var(--color-footer-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.footer-contact .socials a:hover {
+  background: var(--color-accent);
+  transform: translateY(-2px);
+}
+
+.footer-contact .socials img {
+  width: 1.1rem;
+  height: 1.1rem;
+  filter: invert(1);
+}
+
+footer > p {
+  grid-area: copy;
+  align-self: end;
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+/* ---------- Formulaire de contact ---------- */
+
+.formulaire-contact {
+  grid-area: form;
+  background: var(--color-footer-card);
+  border: 1px solid var(--color-footer-border);
+  border-radius: var(--radius-m);
+  padding: 2.25rem;
+}
+
+.formulaire-contact h2 {
+  color: var(--color-background-alt);
+  font-size: 1.35rem;
+  font-weight: 600;
+  margin-bottom: 1.75rem;
+}
+
+.groupe-champ {
+  margin-bottom: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.groupe-champ label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.groupe-champ input,
+.groupe-champ select,
+.groupe-champ textarea {
+  background: var(--color-footer-bg);
+  border: 1px solid var(--color-footer-border);
+  border-radius: var(--radius-s);
+  padding: 0.75rem 1rem;
+  color: var(--color-background-alt);
+}
+
+.groupe-champ input::placeholder,
+.groupe-champ textarea::placeholder {
+  color: var(--color-text-muted);
+}
+
+.groupe-champ textarea { resize: vertical; }
+
+.groupe-champ input:focus,
+.groupe-champ select:focus,
+.groupe-champ textarea:focus {
+  border-color: var(--color-accent);
+}
+
+.formulaire-contact button {
+  width: 100%;
+  margin-top: 0.5rem;
+  padding: 0.9rem 1.5rem;
+  border: none;
+  border-radius: var(--radius-full);
+  background: var(--color-accent);
+  color: var(--color-button-text);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.formulaire-contact button:hover {
+  background: var(--color-accent-hover);
+  transform: translateY(-1px);
+}
+
+@media (max-width: 900px) {
+  footer {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "info"
+      "form"
+      "copy";
+  }
+  footer > p { text-align: center; }
+}

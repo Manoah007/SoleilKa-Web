@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Association Soleil Ka</title>
+        <link rel="stylesheet" href="../static/css/style.css">
+    </head>
+
+
+    
+    <body>
+
+        <header id="menu">
+            <a href="accueil.html"> 
+                <h3>Soleil Ka</h3> 
+                <img src="../static/img/logo-SK.png" alt="Logo de Soleil Ka">
+            </a>
+            <a href="accueil.html">Accueil</a>
+            <a href="histoire.html">Histoire culturelle</a>
+            <a href="adhesion.html">Rejoignez-nous</a>
+            <a href="contact.html">♥ Don</a>
+        </header>
+
+
+        <main>
+            <div class="presentation"> 
+                <h3>Association Culturelle Caribéenne</h3>
+
+                <h1>Soleil Ka</h1>
+
+                <p>
+                    Soley Ka a pour vocation de transmettre, valoriser et faire rayonner 
+                    les cultures antillaises à travers la danse, la musique, le chant et 
+                    les animations culturelles. Nous intervenons auprès de tous les publics 
+                    afin de faire découvrir la richesse du patrimoine caribéen, ses rythmes, 
+                    son histoire et ses traditions.
+                </p>
+
+                <a href="#galerie" class="btn">Galerie</a>
+                <a href="#agenda" class="btn">Agenda</a>
+
+                <img src="../static/img/img.png" alt="Dessin de présentation">
+            </div>
+        </main>
+
+
+        <footer>
+            
+            <div class="footer-contact">
+                <h3> Coordonnées </h3>
+                <div class="email">
+                    <p>Email professionnel</p>
+                    <h4>soleilka_dlra971@yahoo.fr</h4>
+                </div>
+                <div class="tel">
+                    <p>Téléphone</p>
+                    <h4>06 47 61 85 37</h4>
+                </div>
+                <h3>Réseaux sociaux</h3>
+                <div class="socials">
+                    <a href="https://www.facebook.com/soleilka" target="_blank"><img src="../static/img/facebook.png" alt="Logo Facebook"></a>
+                    <a href="https://www.instagram.com/soleilka/" target="_blank"><img src="../static/img/instagram.png" alt="Logo Instagram"></a>
+                    <a href="https://www.youtube.com/@soleilka" target="_blank"><img src="../static/img/youtube.png" alt="Logo YouTube"></a>
+                </div>
+            </div>
+            <p>&copy; 2024 Soleil Ka. Tous droits réservés.</p>
+
+            <form action="/traitement-contact" method="POST" class="formulaire-contact">
+                <h2>Envoyez-nous un message</h2>
+
+                <div class="groupe-champ">
+                    <label for="nom">Votre nom :</label>
+                    <input type="text" id="nom" name="nom_utilisateur" required>
+                </div>
+
+                <div class="groupe-champ">
+                    <label for="email">Votre e-mail :</label>
+                    <input type="email" id="email" name="email_utilisateur" required>
+                </div>
+
+                <div class="groupe-champ">
+                    <label for="sujet">Sujet :</label>
+                    <select id="sujet" name="sujet_message">
+                        <option value="question">Question générale</option>
+                        <option value="support">Support technique</option>
+                        <option value="autre">Autre</option>
+                    </select>
+                </div>
+
+                <div class="groupe-champ">
+                    <label for="message">Votre message :</label>
+                    <textarea id="message" name="contenu_message" rows="5" required></textarea>
+                </div>
+
+                <button type="submit">Envoyer le message</button>
+            </form>
+        </footer>
+    </body>
+</html>
+
+    
