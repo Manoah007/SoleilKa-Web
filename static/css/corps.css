@@ -1,0 +1,104 @@
+/* ==========================================================================
+   Contenu principal (corps.css)
+   ========================================================================== */
+
+main {
+  padding: clamp(3rem, 6vw, 6rem) var(--gutter);
+}
+
+/* La grille se contente de faire 2 colonnes égales */
+.presentation {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center; /* Centre verticalement l'image et le texte */
+  max-width: 1320px;
+  margin: 0 auto;
+}
+
+/* Gestion de l'espacement vertical du texte */
+.presentation-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem; /* Remplace les margin-top complexes de l'ancien code */
+}
+
+/* Style spécifique au petit titre h3 */
+.presentation-content h3 {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  background: var(--color-icon-bg);
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-full);
+}
+
+.presentation-content h3::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-accent);
+}
+
+/* Titre principal et texte */
+.presentation-content h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  max-width: 14ch;
+}
+
+/* Ligne de séparation sous le titre principal */
+.separateur-titre {
+  width: 60px; /* Une ligne courte est souvent plus élégante qu'une ligne pleine largeur */
+  height: 4px;
+  background-color: var(--color-accent); /* Utilise ton orange chaleureux */
+  border: none; /* Enlève la bordure grise par défaut du navigateur */
+  border-radius: var(--radius-full);
+  margin: 0.5rem 0 0.5rem 0; /* Gère l'espacement avec le titre au-dessus et le texte en dessous */
+}
+
+.presentation-content p {
+  max-width: 46ch;
+  font-size: 1.05rem;
+}
+
+/* Ligne des boutons */
+.presentation-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+  flex-wrap: wrap; /* Permet aux boutons de passer à la ligne sur très petit écran */
+  width: 46ch;
+  justify-content: center;
+}
+
+/* L'image de droite */
+.presentation-visual img {
+  width: 100%;
+  height: auto; /* S'adapte naturellement */
+  object-fit: cover;
+  border-radius: var(--radius-m);
+  box-shadow: 0 20px 45px rgba(26, 26, 26, 0.15);
+}
+
+/* Responsive : On passe sur 1 seule colonne sur tablette et mobile */
+@media (max-width: 900px) {
+  .presentation {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  
+  .presentation-visual img {
+    max-height: 420px;
+  }
+}

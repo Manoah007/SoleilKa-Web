@@ -13,44 +13,61 @@
     
     <body>
 
-        <header id="menu">
-            <a href="accueil.html"> 
-                <h3>Soleil Ka</h3> 
+        <header class="header">
+            <a href="accueil.html" class="header-logo"> 
                 <img src="../static/img/logo-SK.png" alt="Logo de Soleil Ka">
+                <h3>Soleil Ka</h3> 
             </a>
-            <a href="accueil.html">Accueil</a>
-            <a href="histoire.html">Histoire culturelle</a>
-            <a href="adhesion.html">Rejoignez-nous</a>
-            <a href="contact.html">♥ Don</a>
+            
+            <nav class="header-nav">
+                <a href="accueil.html">Accueil</a>
+                <a href="histoire.html">Histoire culturelle</a>
+                <a href="adhesion.html">Rejoignez-nous</a>
+            </nav>
+            
+            <a href="contact.html" class="btn btn-don">♥ Don</a>
         </header>
 
 
+
         <main>
-            <div class="presentation"> 
-                <h3>Association Culturelle Caribéenne</h3>
 
-                <h1>Soleil Ka</h1>
+            <div class="presentation">
 
-                <p>
-                    Soley Ka a pour vocation de transmettre, valoriser et faire rayonner 
-                    les cultures antillaises à travers la danse, la musique, le chant et 
-                    les animations culturelles. Nous intervenons auprès de tous les publics 
-                    afin de faire découvrir la richesse du patrimoine caribéen, ses rythmes, 
-                    son histoire et ses traditions.
-                </p>
 
-                <a href="#galerie" class="btn">Galerie</a>
-                <a href="#agenda" class="btn">Agenda</a>
+                <div class="presentation-content">
+                    <h3>Association Culturelle - Caribéenne</h3>
+                    <h1>Soleil Ka</h1>
+                    <hr class="separateur-titre">
+                    <p>
+                        Soleil Ka a pour vocation de transmettre, valoriser et faire rayonner 
+                        les cultures antillaises à travers la danse, la musique, le chant et 
+                        les animations culturelles. Nous intervenons auprès de tous les publics 
+                        afin de faire découvrir la richesse du patrimoine caribéen, ses rythmes, 
+                        son histoire et ses traditions.
+                    </p>
+                    
+                    <div class="presentation-actions">
+                        <a href="#galerie" class="btn btn-accent">Galerie</a>
+                        <a href="#agenda" class="btn btn-outline">Agenda</a>
+                    </div>
+                </div>
 
-                <img src="../static/img/img.png" alt="Dessin de présentation">
+
+                <div class="presentation-visual">
+                    <img src="../static/img/img.png" alt="Dessin de présentation">
+                </div>
+
             </div>
         </main>
 
 
+
+
         <footer>
-            
-            <div class="footer-contact">
-                <h3> Coordonnées </h3>
+
+            <address class="footer-contact">
+                <h3>Coordonnées</h3>
                 <div class="email">
                     <p>Email professionnel</p>
                     <h4>soleilka_dlra971@yahoo.fr</h4>
@@ -59,14 +76,18 @@
                     <p>Téléphone</p>
                     <h4>06 47 61 85 37</h4>
                 </div>
+                
                 <h3>Réseaux sociaux</h3>
                 <div class="socials">
                     <a href="https://www.facebook.com/soleilka" target="_blank"><img src="../static/img/facebook.png" alt="Logo Facebook"></a>
                     <a href="https://www.instagram.com/soleilka/" target="_blank"><img src="../static/img/instagram.png" alt="Logo Instagram"></a>
                     <a href="https://www.youtube.com/@soleilka" target="_blank"><img src="../static/img/youtube.png" alt="Logo YouTube"></a>
                 </div>
-            </div>
-            <p>&copy; 2024 Soleil Ka. Tous droits réservés.</p>
+            </address>
+
+
+            <p class="footer-copyright">&copy; 2026 Soleil Ka. Tous droits réservés.</p>
+
 
             <form action="/traitement-contact" method="POST" class="formulaire-contact">
                 <h2>Envoyez-nous un message</h2>
@@ -95,10 +116,15 @@
                     <textarea id="message" name="contenu_message" rows="5" required></textarea>
                 </div>
 
-                <button type="submit">Envoyer le message</button>
+                <button type="submit" class="btn btn-accent btn-full">Envoyer le message</button>
             </form>
+            
         </footer>
+
+        <script src="../static/js/main.js"></script>
+
     </body>
+
 </html>
 
     

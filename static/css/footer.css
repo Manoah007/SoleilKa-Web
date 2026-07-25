@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Pied de page
+   Pied de page (footer.css)
    ========================================================================== */
 
 footer {
@@ -12,9 +12,14 @@ footer {
   background: var(--color-footer-bg);
   color: var(--color-background-alt);
   padding: clamp(3rem, 6vw, 5.5rem) var(--gutter) 3rem;
+  border-radius: 75px 75px 0 0;
 }
 
-.footer-contact { grid-area: info; }
+/* Zone des coordonnées */
+.footer-contact { 
+  grid-area: info; 
+  font-style: normal; /* Nécessaire car on utilise la balise <address> */
+}
 
 .footer-contact h3 {
   color: var(--color-background-alt);
@@ -62,6 +67,7 @@ footer {
   font-family: var(--font-body);
   font-size: 1rem;
   font-weight: 600;
+  margin: 0;
 }
 
 .footer-contact .socials {
@@ -92,7 +98,7 @@ footer {
   filter: invert(1);
 }
 
-footer > p {
+.footer-copyright {
   grid-area: copy;
   align-self: end;
   font-size: 0.8rem;
@@ -100,7 +106,6 @@ footer > p {
 }
 
 /* ---------- Formulaire de contact ---------- */
-
 .formulaire-contact {
   grid-area: form;
   background: var(--color-footer-card);
@@ -154,24 +159,7 @@ footer > p {
   border-color: var(--color-accent);
 }
 
-.formulaire-contact button {
-  width: 100%;
-  margin-top: 0.5rem;
-  padding: 0.9rem 1.5rem;
-  border: none;
-  border-radius: var(--radius-full);
-  background: var(--color-accent);
-  color: var(--color-button-text);
-  font-weight: 600;
-  cursor: pointer;
-  transition: background-color 0.2s ease, transform 0.2s ease;
-}
-
-.formulaire-contact button:hover {
-  background: var(--color-accent-hover);
-  transform: translateY(-1px);
-}
-
+/* Responsive */
 @media (max-width: 900px) {
   footer {
     grid-template-columns: 1fr;
@@ -180,5 +168,5 @@ footer > p {
       "form"
       "copy";
   }
-  footer > p { text-align: center; }
+  .footer-copyright { text-align: center; }
 }
