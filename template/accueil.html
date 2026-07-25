@@ -7,6 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Association Soleil Ka</title>
         <link rel="stylesheet" href="../static/css/style.css">
+        <script src="https://unpkg.com/@phosphor-icons/web"></script>
     </head>
 
 
@@ -65,7 +66,7 @@
 
 
         <footer>
-
+                
             <address class="footer-contact">
                 <h3>Coordonnées</h3>
                 <div class="email">
@@ -79,46 +80,93 @@
                 
                 <h3>Réseaux sociaux</h3>
                 <div class="socials">
-                    <a href="https://www.facebook.com/soleilka" target="_blank"><img src="../static/img/facebook.png" alt="Logo Facebook"></a>
-                    <a href="https://www.instagram.com/soleilka/" target="_blank"><img src="../static/img/instagram.png" alt="Logo Instagram"></a>
-                    <a href="https://www.youtube.com/@soleilka" target="_blank"><img src="../static/img/youtube.png" alt="Logo YouTube"></a>
+                    <a href="https://www.facebook.com/soleilka" target="_blank" aria-label="Facebook" id="facebook"><i class="ph ph-facebook-logo"></i></a>
+                    <a href="https://www.instagram.com/soleilka/" target="_blank" aria-label="Instagram" id="instagram"><i class="ph ph-instagram-logo"></i></a>
+                    <a href="https://wa.me/33647618537" target="_blank" aria-label="WhatsApp" id="whatsapp"><i class="ph ph-whatsapp-logo"></i></a>
                 </div>
             </address>
 
 
-            <p class="footer-copyright">&copy; 2026 Soleil Ka. Tous droits réservés.</p>
+            <section class="footer-layer-form">
 
-
-            <form action="/traitement-contact" method="POST" class="formulaire-contact">
-                <h2>Envoyez-nous un message</h2>
-
-                <div class="groupe-champ">
-                    <label for="nom">Votre nom :</label>
-                    <input type="text" id="nom" name="nom_utilisateur" required>
+                <div class="footer-form-description"> 
+                    <h2> Envoyez-nous un message </h2>
+                    <p> Une question, un partenariat, ou simplement envie de nous rejoindre ? Contactez-nous ! </p>
+                    <a href="adhesion.html" class="btn btn-accent">Rejoignez-nous !</a>
                 </div>
 
-                <div class="groupe-champ">
-                    <label for="email">Votre e-mail :</label>
-                    <input type="email" id="email" name="email_utilisateur" required>
+                <form action="/traitement-contact" method="POST" class="formulaire-contact">
+
+                    <div class="form-row-double"></div>
+                        <input type="text" id="nom" name="nom_utilisateur" placeholder="Votre nom" aria-label="Votre nom" required>
+                        <input type="email" id="email" name="email_utilisateur" placeholder="Votre e-mail" aria-label="Votre e-mail" required>
+                    </div>
+
+                    <div class="form-row-multiple-choice">
+                        <select id="sujet" name="sujet_message">
+                            <option value="question">Question générale</option>
+                            <option value="support">Support technique</option>
+                            <option value="autre">Autre</option>
+                        </select>
+                    </div>
+
+                    <div class="form-row-single">
+                        <textarea id="message" name="contenu_message" rows="5" placeholder="Votre message..." aria-label="Votre message" required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-accent btn-full">Envoyer</button>
+                </form>
+            </section>
+                
+
+
+            <section class="footer-layer-more"> 
+                <div class="footer-more">
+
+                    <div class="description">
+
+                        <div class="footer-logo">
+                            <img src="../static/img/logo-SK.png" alt="Logo de Soleil Ka">
+                            <h3>Soleil Ka</h3> 
+                        </div>
+
+                        <p>
+                            Association culturelle guadeloupéenne 
+                            dédiée à la transmission du patrimoine 
+                            antillais — Gwo Ka, danse, chant et 
+                            organisation événementielle
+                        </p>
+
+                        <a href="https://www.soleilka.fr" class="footer-website">www.soleilka.fr</a>
+                    </div>
+
+                    <div class="footer-links">
+                        <h3>Navigation</h3>
+                        <ul>
+                            <li><a href="accueil.html">Accueil</a></li>
+                            <li><a href="histoire.html">Histoire culturelle</a></li>
+                            <li><a href="adhesion.html">Rejoignez-nous</a></li>
+                            <li><a href="#footer-contact">Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-legal">
+                        <h3>Informations légales</h3>
+                        <ul>
+                            <li><a href="mentions-legales.html">Mentions légales</a></li>
+                            <li><a href="politique-confidentialite.html">Politique de confidentialité</a></li>
+                            <li><a href="conditions-utilisation.html">Conditions d'utilisation</a></li>
+                            <li><a href="status-associatif.html">Status associatif</a></li>
+                        </ul>
+                    </div>
+
                 </div>
 
-                <div class="groupe-champ">
-                    <label for="sujet">Sujet :</label>
-                    <select id="sujet" name="sujet_message">
-                        <option value="question">Question générale</option>
-                        <option value="support">Support technique</option>
-                        <option value="autre">Autre</option>
-                    </select>
-                </div>
+                <hr class="footer-divider">
+                <p class="footer-copyright">&copy; 2026 Soleil Ka. Tous droits réservés.</p>
 
-                <div class="groupe-champ">
-                    <label for="message">Votre message :</label>
-                    <textarea id="message" name="contenu_message" rows="5" required></textarea>
-                </div>
+            </section>
 
-                <button type="submit" class="btn btn-accent btn-full">Envoyer le message</button>
-            </form>
-            
         </footer>
 
         <script src="../static/js/main.js"></script>
