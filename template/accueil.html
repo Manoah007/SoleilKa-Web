@@ -66,56 +66,78 @@
 
 
         <footer>
+
+            <section class="footer-layer-contact">
+
+                <address class="footer-contact">
+                    <h3>Coordonnées</h3>
+                    <div class="email">
+                        <p>Email professionnel</p>
+                        <h4>soleilka_dlra971@yahoo.fr</h4>
+                    </div>
+                    <div class="tel">
+                        <p>Téléphone</p>
+                        <h4>06 47 61 85 37</h4>
+                    </div>
+                    
+                    <h3>Réseaux sociaux</h3>
+                    <div class="socials">
+                        <a href="https://www.facebook.com/soleilka" target="_blank" aria-label="Facebook" id="facebook"><i class="ph ph-facebook-logo"></i></a>
+                        <a href="https://www.instagram.com/soleilka/" target="_blank" aria-label="Instagram" id="instagram"><i class="ph ph-instagram-logo"></i></a>
+                        <a href="https://wa.me/33647618537" target="_blank" aria-label="WhatsApp" id="whatsapp"><i class="ph ph-whatsapp-logo"></i></a>
+                    </div>
+                </address>
+            
+                <div class="footer-divider-container"> 
+                    <hr class="footer-divider">
+                </div>
                 
-            <address class="footer-contact">
-                <h3>Coordonnées</h3>
-                <div class="email">
-                    <p>Email professionnel</p>
-                    <h4>soleilka_dlra971@yahoo.fr</h4>
-                </div>
-                <div class="tel">
-                    <p>Téléphone</p>
-                    <h4>06 47 61 85 37</h4>
-                </div>
-                
-                <h3>Réseaux sociaux</h3>
-                <div class="socials">
-                    <a href="https://www.facebook.com/soleilka" target="_blank" aria-label="Facebook" id="facebook"><i class="ph ph-facebook-logo"></i></a>
-                    <a href="https://www.instagram.com/soleilka/" target="_blank" aria-label="Instagram" id="instagram"><i class="ph ph-instagram-logo"></i></a>
-                    <a href="https://wa.me/33647618537" target="_blank" aria-label="WhatsApp" id="whatsapp"><i class="ph ph-whatsapp-logo"></i></a>
-                </div>
-            </address>
+                <section class="footer-layer-form">   
 
-
-            <section class="footer-layer-form">
-
-                <div class="footer-form-description"> 
-                    <h2> Envoyez-nous un message </h2>
-                    <p> Une question, un partenariat, ou simplement envie de nous rejoindre ? Contactez-nous ! </p>
-                    <a href="adhesion.html" class="btn btn-accent">Rejoignez-nous !</a>
-                </div>
-
-                <form action="/traitement-contact" method="POST" class="formulaire-contact">
-
-                    <div class="form-row-double"></div>
-                        <input type="text" id="nom" name="nom_utilisateur" placeholder="Votre nom" aria-label="Votre nom" required>
-                        <input type="email" id="email" name="email_utilisateur" placeholder="Votre e-mail" aria-label="Votre e-mail" required>
+                    <div class="footer-form-description"> 
+                        <h2> Envoyez-nous un message </h2>
+                        <p> Une question, un partenariat, ou simplement envie de nous rejoindre ? Contactez-nous ! </p>
+                        <a href="adhesion.html" class="btn btn-accent">Rejoignez-nous !</a>
                     </div>
 
-                    <div class="form-row-multiple-choice">
-                        <select id="sujet" name="sujet_message">
-                            <option value="question">Question générale</option>
-                            <option value="support">Support technique</option>
-                            <option value="autre">Autre</option>
+
+                    <form action="#" method="POST" class="formulaire-contact">
+        
+                        <div class="form-row-double">
+                            <input type="text" id="nom" name="nom" placeholder="Votre nom complet *" required>
+                            <input type="email" id="email" name="email" placeholder="Votre adresse e-mail *" required>
+                        </div>
+
+                        <div class="form-row-double">
+                            <select id="profil" name="profil" required>
+                                <option value="" disabled selected>Vous êtes... *</option>
+                                <option value="particulier">Un particulier</option>
+                                <option value="entreprise">Une entreprise</option>
+                                <option value="autre">Un autre organisme</option>
+                            </select>
+                            
+                            <input type="tel" id="telephone" name="telephone" placeholder="Votre téléphone (optionnel)">
+                        </div>
+
+                        <select id="sujet" name="sujet" required>
+                            <option value="" disabled selected>Sujet de votre demande *</option>
+                            <option value="devis">Demande de devis</option>
+                            <option value="information">Demande d'information</option>
+                            <option value="partenariat">Proposition de partenariat</option>
+                            <option value="autre">Autre demande</option>
                         </select>
-                    </div>
 
-                    <div class="form-row-single">
-                        <textarea id="message" name="contenu_message" rows="5" placeholder="Votre message..." aria-label="Votre message" required></textarea>
-                    </div>
+                        <textarea id="message" name="message" placeholder="Votre message... *" required></textarea>
 
-                    <button type="submit" class="btn btn-accent btn-full">Envoyer</button>
-                </form>
+                        <div class="form-rgpd">
+                            <input type="checkbox" id="rgpd" name="rgpd" required>
+                            <label for="rgpd">En soumettant ce formulaire, j'accepte que mes données soient exploitées dans le cadre de ma demande. *</label>
+                        </div>
+
+                        <button type="submit" class="btn btn-accent btn-full">Envoyer le message</button>
+
+                    </form>
+                </section>
             </section>
                 
 
