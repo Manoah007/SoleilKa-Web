@@ -13,9 +13,8 @@ footer {
 
 .footer-divider-container{
         width: 100%;
-        display: flex;
+        display: block;
         justify-content: center; /* Centre le séparateur horizontalement */
-        padding: 0 var(--gutter);
     }
 
 /* Séparateur */
@@ -31,6 +30,7 @@ footer {
    COUCHE 1 : COORDONNÉES (.footer-layer-contact)
 ========================================================= */
 
+/* Propriétés générales des deux grands container */
 .footer-layer-contact {
     width: 100%;
     padding: 4rem 0 1rem; /* Le padding horizontal est désormais géré par .footer-contact (voir ci-dessous) */
@@ -55,27 +55,11 @@ footer {
     margin: 0;
 }
 
-/* Le 2e <h3> ("Réseaux sociaux") */
-.footer-contact h3:nth-of-type(2) {
-    grid-column: 3 / 4;
-    grid-row: 1;
-    color: var(--color-accent);
-    display: flex;
-    justify-content: flex-start;
-    margin: 0;
-}
-
 .footer-contact .email { grid-column: 1 / 2; grid-row: 2; }
-.footer-contact .tel   { grid-column: 2 / 3; grid-row: 2; }
+.footer-contact .tel { grid-column: 2 / 3; grid-row: 2; }
+.footer-contact .reseaux-sociaux { grid-column: 3 / 4; grid-row: 2; }
 
-.footer-contact .socials {
-    grid-column: 3 / 4;
-    grid-row: 2;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 1rem;
-}
+
 
 /* Retouche esthétique pour les textes (labels) */
 .footer-contact p {
@@ -84,54 +68,48 @@ footer {
     margin-bottom: 0.2rem;
 }
 
-.footer-contact h4 {
+/* Retouche esthétique pour les liens (email, téléphone, réseaux sociaux) */
+.footer-contact a {
     margin: 0;
     font-size: 1.1rem;
     color: #ffffff;
-}
-
-/* GESTION DES ICONES DES RÉSEAUX SOCIAUX */
-.footer-contact .socials a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 45px;
-    height: 45px;
-    border: 2px solid var(--color-footer-border);
-    border-radius: 50%;
+    position: relative;
     text-decoration: none;
-    transition: border-color 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
-}
-
-.footer-contact .socials a i {
-    font-size: 22px;
-    color: var(--color-text-muted);
     transition: color 0.3s ease;
 }
 
-/* -- Animation au survol sur le cercle -- */
-.footer-contact .socials a#facebook:hover {
-    border-color: #0aa0c5;
-    background-color: #0aa0c5;
-    transform: translateY(-3px);
-}
-.footer-contact .socials a#instagram:hover {
-    border-color: #e1306c;
-    background-color: #e1306c;
-    transform: translateY(-3px);
-}
-.footer-contact .socials a#whatsapp:hover {
-    border-color: #25d366;
-    background-color: #25d366;
-    transform: translateY(-3px);
+.footer-contact a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 0;
+    height: 3px;
+    background-color: #ffffff;
+    transition: width 0.3s ease;
 }
 
-.footer-contact .socials a:hover i {
+/* Effet de soulignement au survol pour les liens */
+.footer-contact a:hover::after {
+    width: 100%;
+}
+
+.footer-contact a:hover {
     color: #ffffff;
 }
 
-footer .separateur-titre {
-    justify-content: flex-start;
+.footer-contact a:active{
+    color: var(--color-text-body);
+}
+
+.footer-contact a:active::after {
+    width: 100%;
+    background-color: var(--color-text-body);
+}
+
+.footer-contact .footer-divider-container {
+    grid-column: 1 / 4;
+    grid-row: 3;
 }
 
 /* =========================================================
@@ -167,6 +145,10 @@ footer .separateur-titre {
     margin-bottom: 2rem;
 }
 
+.footer-form-description .btn-outline {
+    margin-left: 1rem;
+    filter: invert(100%);
+}
 .formulaire-contact {
     flex: 1;
     max-width: 600px;
