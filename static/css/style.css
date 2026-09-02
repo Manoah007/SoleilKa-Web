@@ -56,7 +56,6 @@ html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
-  background: var(--color-background);
   color: var(--color-text-body);
   font-family: var(--font-body);
   line-height: 1.6;
@@ -67,6 +66,22 @@ h1, h2, h3 {
   font-family: var(--font-display);
   color: var(--color-text-heading);
   margin: 0;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  max-width: 14ch;
+}
+
+h4{
+  font-family: "Segoe UI", "Times New Roman", serif;
+  font-weight: 800; /* Typographie très grasse */
+  font-size: 15px; 
+  letter-spacing: 1px; /* Léger espacement pour la lisibilité */
+  margin: 0.5rem 0;
 }
 
 p { margin: 0; }
@@ -88,7 +103,12 @@ button, input, select, textarea {
   outline-offset: 3px;
 }
 
-
+.separateur-titre {
+  width: 60px; /* Une ligne courte est souvent plus élégante qu'une ligne pleine largeur */
+  height: 4px;
+  border: none; /* Enlève la bordure grise par défaut du navigateur */
+  border-radius: var(--radius-full);
+}
 
 /* Structure de base commune à tous les boutons */
 .btn {

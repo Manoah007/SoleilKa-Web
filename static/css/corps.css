@@ -1,22 +1,23 @@
-/* ==========================================================================
-   Contenu principal (corps.css)
-   ========================================================================== */
-
-main {
-  padding: clamp(3rem, 6vw, 6rem) var(--gutter);
-}
 /**************************/
 /* Présentation d'acceuil */
 /**************************/
 
-/* La grille se contente de faire 2 colonnes égales */
 .presentation {
+  width: 100%;
+  height: auto;
+  box-sizing: border-box; /* Assure que les enfants ne dépassent pas le conteneur */
+  background-color: var(--color-background);
+  padding: 1rem 0;
+}
+
+/* Enfant : gère la grille et le bridage de largeur */
+.presentation-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-  align-items: center; /* Centre verticalement l'image et le texte */
-  max-width: 1320px;
-  margin: 0 auto;
+  width: 100%;
+  max-width: none;
+  margin: 4rem auto;
+  padding: 0 var(--gutter);
 }
 
 /* Gestion de l'espacement vertical du texte */
@@ -42,32 +43,9 @@ main {
   padding: 0.5rem 1rem;
   border-radius: var(--radius-full);
 }
-
-.presentation-content h3::before {
-  content: "";
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--color-accent);
-}
-
-/* Titre principal et texte */
-.presentation-content h1 {
-  font-size: clamp(2.5rem, 5vw, 4rem);
-  font-weight: 600;
-  line-height: 1.05;
-  letter-spacing: -0.01em;
-  max-width: 14ch;
-}
-
-/* Ligne de séparation sous le titre principal */
-.separateur-titre {
-  width: 60px; /* Une ligne courte est souvent plus élégante qu'une ligne pleine largeur */
-  height: 4px;
+.presentation-content hr {
+  margin: 0.5rem 0 0.5rem 0;
   background-color: var(--color-accent); /* Utilise ton orange chaleureux */
-  border: none; /* Enlève la bordure grise par défaut du navigateur */
-  border-radius: var(--radius-full);
-  margin: 0.5rem 0 0.5rem 0; /* Gère l'espacement avec le titre au-dessus et le texte en dessous */
 }
 
 .presentation-content p {
@@ -75,35 +53,89 @@ main {
   font-size: 1.05rem;
 }
 
-/* Ligne des boutons */
-.presentation-actions {
-  display: flex;
-  gap: 1rem;
-  margin-top: 0.5rem;
-  flex-wrap: wrap; 
-  width: 100%;
-  max-width: 46ch;
-  justify-content: center;
-}
-
 /* L'image de droite */
 .presentation-visual img {
   width: 100%;
   height: auto; /* S'adapte naturellement */
-  object-fit: cover;
+  object-fit: cover; /* Adapte le conteneur au contenue visuel */
   border-radius: var(--radius-m);
   box-shadow: 0 20px 45px rgba(26, 26, 26, 0.15);
 }
 
-.presentation-container {
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
+/**********/
+/* AGENDA */
+/**********/
+.agenda-container {
   width: 100%;
   max-width: none;
-  margin: 4rem auto;
-  padding: 0 var(--gutter);
-  background-color: var(--color-button-text);
+  padding: 4rem;
+  background-color: var(--color-background-alt);
+}
+.agenda-container h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.event {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 2rem;
+  margin: 0.5rem 0;
+}
+
+.agenda {
+    background-color: var(--color-background-alt); /* Gris foncé moderne */
+    border-radius: 24px; /* Les fameux bords très arrondis */
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+
+.agenda#hiver hr{ background-color: #09c2e2; }
+
+.agenda#printemps hr{ background-color: #42c010; }
+
+.agenda#ete hr{ background-color: #f3e40e; }
+
+.agenda#automne hr{ background-color: #cf9311; }
+
+
+.agenda:hover {
+    transform: translateY(-5px);
+    /* Décalage X, Décalage Y, Flou, Étalement, Couleur */ 
+}
+
+
+.date {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 1rem 0 0 0;
+    
+}
+
+.agenda hr{
+  margin-top: 0;
+  margin-left: 0;
+}
+
+/* CSS de la localisation */
+.localisation-container {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.localisation-texte {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #79a1c6;
+  letter-spacing: 0.3px;
+}
+
+.material-symbols-outlined {
+  font-size: 10px;
+  color: #9aa0a6;
+  display: flex;
 }
 /* =========================================================
    GRILLE BENTO - PRESTATIONS (Alignement Vertical)

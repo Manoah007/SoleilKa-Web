@@ -7,6 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Association Soleil Ka</title>
         <link rel="stylesheet" href="../static/css/style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
     </head>
 
 
@@ -14,18 +15,20 @@
     <body>
 
         <header class="header">
-            <a href="accueil.html" class="header-logo"> 
+            <a href="accueil.html" class="header-logo">
                 <img src="../static/img/logo-SK.png" alt="Logo de Soleil Ka">
                 <h3>Soleil Ka</h3> 
             </a>
             
             <nav class="header-nav">
-                <a href="accueil.html">Accueil</a>
+                <a href="#accueil">Accueil</a>
+                <a href="#agenda">Agenda</a>
+                <a href="#prestations">Prestations</a>
+                <a href="#adhesion">Adhésion</a>
                 <a href="histoire.html">Histoire culturelle</a>
-                <a href="adhesion.html">Rejoignez-nous</a>
             </nav>
             
-            <a href="contact.html" class="btn btn-don">♥ Don</a>
+            <a href="don.html" class="btn btn-don">♥ Don</a>
         </header>
 
 
@@ -33,67 +36,107 @@
         <main>
             
             <!-- SECTION PRESENTATION - PRESENTE L'ASSOCIATION -->
-            <div class="presentation">
+            <section class="presentation">
 
-                <div class="presentation-content">
-                    <h3>Association Culturelle - Caribéenne</h3>
-                    <h1>Soleil Ka</h1>
-                    <hr class="separateur-titre">
-                    <p>
-                        Soleil Ka a pour vocation de transmettre, valoriser et faire rayonner 
-                        les cultures antillaises à travers la danse, la musique, le chant et 
-                        les animations culturelles. Nous intervenons auprès de tous les publics 
-                        afin de faire découvrir la richesse du patrimoine caribéen, ses rythmes, 
-                        son histoire et ses traditions.
-                    </p>
+                <div class="presentation-container">
+                    <div class="presentation-content" id="accueil">
+                        <h3>• Association Culturelle - Caribéenne</h3>
+                        <h1>Soleil Ka</h1>
+                        <hr class="separateur-titre">
+                        <p>
+                            Soleil Ka a pour vocation de transmettre, valoriser et faire rayonner 
+                            les cultures antillaises à travers la danse, la musique, le chant et 
+                            les animations culturelles. Nous intervenons auprès de tous les publics 
+                            afin de faire découvrir la richesse du patrimoine caribéen, ses rythmes, 
+                            son histoire et ses traditions.
+                        </p>
+                    </div>
+                    <div class="presentation-visual">
+                        <img src="../static/img/photo-equipe.jpeg" alt="Photo de l'équipe">
+                    </div>
                 </div>
 
-
-                <div class="presentation-visual">
-                    <img src="../static/img/photo-equipe.jpeg" alt="Photo de l'équipe">
+                
+                <!-- SECTION AGENDA - MONTRE LES PROCHAINS ÉVÉNEMENTS DE L'ASSOCIATION -->
+                <div class="agenda-container" id="agenda">
+                    <h2>Agenda 🗓️</h2>
+                    <div class="event"> 
+                        <section class="agenda" id="hiver">
+                            <h4>Lancement de l'association</h4>
+                            <hr class="separateur-titre">
+                            <p class="date"><em>19 Décembre 2026</em></p>
+                            <div class="localisation-container">
+                                <span class="material-symbols-outlined">location_on</span>
+                                <p class="localisation-texte">Couture des Clos, 02210 Coincy</p>
+                            </div>
+                        </section>
+                        <section class="agenda" id="printemps">
+                            <h4>Nom de l'événement</h4>
+                            <hr class="separateur-titre">
+                            <p class="date"><em>XX Mois 202X</em></p>
+                            <div class="localisation-container">
+                                <span class="material-symbols-outlined">location_on</span>
+                                <p class="localisation-texte">Couture des Clos, 02210 Coincy</p>
+                            </div>
+                        </section>
+                        <section class="agenda" id="ete">
+                            <h4>Nom de l'événement</h4>
+                            <hr class="separateur-titre">
+                            <p class="date"><em>XX Mois 202X</em></p>
+                            <div class="localisation-container">
+                                <span class="material-symbols-outlined">location_on</span>
+                                <p class="localisation-texte">Couture des Clos, 02210 Coincy</p>
+                            </div>
+                        </section>
+                        <section class="agenda" id="automne">
+                            <h4>Nom de l'événement</h4>
+                            <hr class="separateur-titre">
+                            <p class="date"><em>XX Mois 202X</em></p>
+                            <div class="localisation-container">
+                                <span class="material-symbols-outlined">location_on</span>
+                                <p class="localisation-texte">Couture des Clos, 02210 Coincy</p>
+                            </div>
+                        </section>
+                    </div>
                 </div>
-            </div>
 
-            
-            <!-- SECTION AGENDA - MONTRE LES PROCHAINS ÉVÉNEMENTS DE L'ASSOCIATION -->
-            <div class="agenda-container">
-                <h2>Nos prochains événements</h2>
-                <section class="agenda">
-                </section>
-            </div>
+                <div class="prestations-section" id="prestations">
+                    <div class="bento-prestations">
+                        <h2>Nos prestations</h2>
 
-            <div class="prestations-container">
-                <h2>Nos prestations</h2>
-                <section class="bento-prestations">
-                    <!-- Carte 1 : Nos danses -->
-                    <div class="bento-card">
-                        <img src="chemin-vers-ta-photo-danse.jpg" alt="Danseurs de Gwo Ka">
-                        <div class="bento-legende">
-                            <h3>Nos danses</h3>
-                            <p>Découvrez la beauté et l'énergie du Gwo Ka traditionnel.</p>
+                        <!-- Carte 1 : Nos danses -->
+                        <div class="bento-card">
+                            <img src="chemin-vers-ta-photo-danse.jpg" alt="Danseurs de Gwo Ka">
+                            <div class="bento-legende">
+                                <h3>Nos danses</h3>
+                                <p>
+                                    Découvrez la beauté et l'énergie de l'art antillais par nos danses traditionnelles
+                                    tel que le Gwo ka, Le Bélé de Martinique et la Biguin. Voir aussi <strong><i><a href="histoire.html">Histoire culturelle</a></i></strong>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Carte 2 : Nos pâtisseries -->
+                        <div class="bento-card">
+                            <img src="chemin-vers-ta-photo-patisserie.jpg" alt="Pâtisseries antillaises">
+                            <div class="bento-legende">
+                                <h3>Nos pâtisseries</h3>
+                                <p>Laissez-vous tenter par nos patisseries faites maison et avec amour.</p>
+                            </div>
+                        </div>
+
+                        <!-- Carte 3 : Nos défilés -->
+                        <div class="bento-card">
+                            <img src="chemin-vers-ta-photo-defile.jpg" alt="Défilé de carnaval">
+                            <div class="bento-legende">
+                                <h3>Nos défilés</h3>
+                                <p>Vibrez au rythme de nos parades et admirez l'élégance des tissus antillais.</p>
+                            </div>
                         </div>
                     </div>
+                </div>
 
-                    <!-- Carte 2 : Nos pâtisseries -->
-                    <div class="bento-card">
-                        <img src="chemin-vers-ta-photo-patisserie.jpg" alt="Pâtisseries antillaises">
-                        <div class="bento-legende">
-                            <h3>Nos pâtisseries</h3>
-                            <p>Laissez-vous tenter par nos douceurs traditionnelles.</p>
-                        </div>
-                    </div>
-
-                    <!-- Carte 3 : Nos défilés -->
-                    <div class="bento-card">
-                        <img src="chemin-vers-ta-photo-defile.jpg" alt="Défilé de carnaval">
-                        <div class="bento-legende">
-                            <h3>Nos défilés</h3>
-                            <p>Vibrez au rythme de nos parades de carnaval.</p>
-                        </div>
-                    </div>
-                </section>
-
-                <section>
+                <div class="prestations-modalites">
                     <h3>Nos modalités de prestations</h3>
                     <p>
                         Nous proposons des prestations sur mesure pour répondre aux besoins de nos clients. 
@@ -105,7 +148,8 @@
                         envisageables pour des collaborations avec d'autres structures associatives.
                     </p>
                     <a href="#contact" class="btn btn-accent">Contactez-nous</a>
-                </section>
+                </div>
+
 
                 <div class="adhesion">
                     <h2>Soutenez-nous</h2>
@@ -125,10 +169,9 @@
                         <a href="contact.html" class="btn btn-accent">Formulaire d'adhésion</a>
                         <a href="contact.html" class="btn btn-accent">Document d'adhésion</a>
                     </div>
-            </div>
-
+                </div>
+            </section>
         </main>
-
 
 
 
