@@ -8,7 +8,7 @@
         <title>Association Soleil Ka</title>
         <link rel="stylesheet" href="../static/css/style.css">
         <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
-    </head>
+        <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Rubik:wght@400;700;900&display=swap" rel="stylesheet">
 
 
     
@@ -36,9 +36,9 @@
         <main>
             
             <!-- SECTION PRESENTATION - PRESENTE L'ASSOCIATION -->
-            <section class="presentation">
+            <div class="presentation">
 
-                <div class="presentation-container">
+                <section class="presentation-container">
                     <div class="presentation-content" id="accueil">
                         <h3>• Association Culturelle - Caribéenne</h3>
                         <h1>Soleil Ka</h1>
@@ -54,53 +54,11 @@
                     <div class="presentation-visual">
                         <img src="../static/img/photo-equipe.jpeg" alt="Photo de l'équipe">
                     </div>
-                </div>
+                </section>
 
                 
-                <!-- SECTION AGENDA - MONTRE LES PROCHAINS ÉVÉNEMENTS DE L'ASSOCIATION -->
-                <div class="agenda-container" id="agenda">
-                    <h2>Agenda 🗓️</h2>
-                    <div class="event"> 
-                        <section class="agenda" id="hiver">
-                            <h4>Lancement de l'association</h4>
-                            <hr class="separateur-titre">
-                            <p class="date"><em>19 Décembre 2026</em></p>
-                            <div class="localisation-container">
-                                <span class="material-symbols-outlined">location_on</span>
-                                <p class="localisation-texte">Couture des Clos, 02210 Coincy</p>
-                            </div>
-                        </section>
-                        <section class="agenda" id="printemps">
-                            <h4>Nom de l'événement</h4>
-                            <hr class="separateur-titre">
-                            <p class="date"><em>XX Mois 202X</em></p>
-                            <div class="localisation-container">
-                                <span class="material-symbols-outlined">location_on</span>
-                                <p class="localisation-texte">Couture des Clos, 02210 Coincy</p>
-                            </div>
-                        </section>
-                        <section class="agenda" id="ete">
-                            <h4>Nom de l'événement</h4>
-                            <hr class="separateur-titre">
-                            <p class="date"><em>XX Mois 202X</em></p>
-                            <div class="localisation-container">
-                                <span class="material-symbols-outlined">location_on</span>
-                                <p class="localisation-texte">Couture des Clos, 02210 Coincy</p>
-                            </div>
-                        </section>
-                        <section class="agenda" id="automne">
-                            <h4>Nom de l'événement</h4>
-                            <hr class="separateur-titre">
-                            <p class="date"><em>XX Mois 202X</em></p>
-                            <div class="localisation-container">
-                                <span class="material-symbols-outlined">location_on</span>
-                                <p class="localisation-texte">Couture des Clos, 02210 Coincy</p>
-                            </div>
-                        </section>
-                    </div>
-                </div>
-
-                <div class="prestations-section" id="prestations">
+                <!-- SECTION PRESTATIONS -->
+                <section class="prestations-section" id="prestations">
                     <div class="bento-prestations">
                         <h2>Nos prestations</h2>
 
@@ -134,43 +92,50 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </section>
 
-                <div class="prestations-modalites">
+                <section class="prestations-modalites">
                     <h3>Nos modalités de prestations</h3>
+                    <hr class="separateur-titre">
                     <p>
-                        Nous proposons des prestations sur mesure pour répondre aux besoins de nos clients. 
-                        Que ce soit pour des événements d'entreprise, des célébrations de mariage, des inaugurations,
+                        L'association Soleil Ka vous propose des prestations sur mesure pour répondre à vos demandes. 
+                        Que notre sollitation soit requise pour des événements d'entreprise, des célébrations de mariage, des inaugurations,
                         des festivals ou des ateliers culturels, nous adaptons nos services pour offrir une expérience 
                         unique et authentique.
+                    </p>
+                    <p>
                         Ces prestations se font sur devis. L'auteur du devis peut être un particulier,
                         une entreprise, une structure publique, etc. Des possibilités de partenariat sont également 
                         envisageables pour des collaborations avec d'autres structures associatives.
                     </p>
-                    <a href="#contact" class="btn btn-accent">Contactez-nous</a>
-                </div>
+                    <a href="#contact" class="btn">Contactez-nous</a>
+                </section>
 
 
-                <div class="adhesion">
-                    <h2>Soutenez-nous</h2>
-                    <p> Pourquoi adhérer à l'association Soleil Ka ? 
-                        Adhérer vous permet nous apporter de l'aide matérielle et financière pour permettre à Soleil Ka de continuer
-                        à se développer et à proposer des activités culturelles de qualité. Vous avez aussi un rôle important à jouer : 
-                        pouvoir participer et vivre avec nous les évènements importants de l'asssociation et ainsi participer à ma vie de
-                        l'association.
-                        Votre aide nous est précieuse !
-                    </p>
-                    <div class="grille-tarifaire">
-                        <h2>Tarifs</h2>
-                        <p>Adhésion annuelle à l'association pour devenir adhérent</p>
-                        <h3>12€/ans</h3>
+                <section class="adhesion">
+                    <div class="texte-adhesion">
+                        <h2>Soutenez-nous</h2>
+                        <p> Pourquoi adhérer à l'association Soleil Ka ? 
+                            Adhérer vous permet nous apporter de l'aide matérielle et financière pour permettre à Soleil Ka de continuer
+                            à se développer et à proposer des activités culturelles de qualité. Vous avez aussi un rôle important à jouer : 
+                            pouvoir participer et vivre avec nous les évènements importants de l'asssociation et ainsi participer à ma vie de
+                            l'association.
+                            Votre aide nous est précieuse !
+                        </p>
+                        <div>
+                            <a href="contact.html" class="btn btn-accent">Formulaire d'adhésion</a>
+                            <a href="contact.html" class="btn btn-accent">Document d'adhésion</a>
+                        </div>
                     </div>
-                    <div>
-                        <a href="contact.html" class="btn btn-accent">Formulaire d'adhésion</a>
-                        <a href="contact.html" class="btn btn-accent">Document d'adhésion</a>
+                    <div class="tarif">
+                        <div class="grille-tarifaire">
+                            <h2>Tarifs</h2>
+                            <p>Adhésion annuelle à l'association pour devenir adhérent</p>
+                            <h3>12€/ans</h3>
+                        </div>
                     </div>
-                </div>
-            </section>
+                </section>
+            </div>
         </main>
 
 

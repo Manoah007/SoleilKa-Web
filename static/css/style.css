@@ -62,10 +62,24 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-h1, h2, h3 {
+section {
+  width: 100%;
+  max-width: none;
+  margin: 3rem auto;
+  padding: 0 5rem;
+}
+
+.separateur-titre {
+  width: 60px;
+  height: 4px;
+  border: none; /* Enlève la bordure grise par défaut du navigateur */
+  border-radius: var(--radius-full);
+}
+
+h1, h2 {
   font-family: var(--font-display);
-  color: var(--color-text-heading);
   margin: 0;
+  color: var(--color-text-heading);
 }
 
 h1 {
@@ -73,7 +87,21 @@ h1 {
   font-weight: 600;
   line-height: 1.05;
   letter-spacing: -0.01em;
-  max-width: 14ch;
+}
+
+h2 {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+
+h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.5rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
 }
 
 h4{
@@ -84,14 +112,25 @@ h4{
   margin: 0.5rem 0;
 }
 
-p { margin: 0; }
+p { 
+  font-size: 1rem;
+  margin: 0; 
+}
 
 a {
   color: inherit;
   text-decoration: none;
 }
 
-img { max-width: 100%; display: block; }
+img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto; /* S'adapte naturellement */
+  object-fit: cover; /* Adapte le conteneur au contenue visuel */
+  border-radius: var(--radius-m);
+}
+
 
 button, input, select, textarea {
   font-family: var(--font-body);
@@ -103,12 +142,7 @@ button, input, select, textarea {
   outline-offset: 3px;
 }
 
-.separateur-titre {
-  width: 60px; /* Une ligne courte est souvent plus élégante qu'une ligne pleine largeur */
-  height: 4px;
-  border: none; /* Enlève la bordure grise par défaut du navigateur */
-  border-radius: var(--radius-full);
-}
+
 
 /* Structure de base commune à tous les boutons */
 .btn {
