@@ -4,20 +4,20 @@
 body { background-color: var(--color-background); }
 
 main {
-  display: flex; /* ou display: grid; */
-  gap: 0; /* Retire tout espacement entre les enfants */
-}
-
-.presentation {
+  display: grid;
+  flex-direction: column;
   width: 100%;
   height: auto;
+  gap: 0;
   box-sizing: border-box; /* Assure que les enfants ne dépassent pas le conteneur */
 }
 
 /* Enfant : gère la grille et le bridage de largeur */
-.presentation-container {
+.presentation {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin: 0;
 }
 
 /* Gestion de l'espacement vertical du texte */
@@ -49,10 +49,20 @@ main {
   background-color: var(--color-accent); /* Utilise ton orange chaleureux */
 }
 
+.presentation-content div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem; /* Espacement vertical entre les paragraphes */
+}
 .presentation-content p {
   max-width: 46ch;
+  padding: 0;
+  margin: 0;
 }
 
+.presentation-visual { 
+  align-self: center;
+}
 /* L'image de droite */
 .presentation-visual img {
   box-shadow: 0 20px 45px rgba(26, 26, 26, 0.15);
@@ -61,6 +71,12 @@ main {
 /* =========================================================
    STYLE - SECTION PRESTATIONS 
 ========================================================= */
+
+.prestations-section {
+  background-color: #ffff;
+  padding: 4rem 10rem;
+  margin: 0;
+}
 
 .bento-prestations {
     display: grid;
@@ -74,7 +90,7 @@ main {
     display: flex;
     align-items: flex-end; /* Pousse automatiquement la légende tout en bas */
     position: relative; /* Indispensable pour pouvoir superposer l'image et le texte */
-    height: 400px; /* Une hauteur convenable et élégante pour des photos */
+    height: 500px; /* Une hauteur convenable et élégante pour des photos */
     border-radius: 30px;
     overflow: hidden; /* Empêche l'image de dépasser des coins arrondis */
     border: 1px solid #3a3a3c;
@@ -88,6 +104,10 @@ main {
     left: 0;
     z-index: 1;
     transition: transform 0.5s ease; /* Pour un effet de zoom doux au survol */
+}
+
+#patisserie, #danse, #defile {
+    object-position: center;
 }
 
 .bento-legende {
@@ -159,6 +179,7 @@ main {
   line-height: 1.5;
   padding: 1rem 20rem 0 0;
   margin-bottom: 1rem;
+  max-width: 80ch;
 }
 
 .prestations-modalites a {
@@ -176,9 +197,68 @@ main {
   display: grid;
   grid-template-columns: 1fr 1fr;
   background-color: #ffff;
-  padding: 2rem 0;
+  padding: 6rem 10rem;
   height: auto;
+}
 
+.texte-adhesion h2 {
+  color: #0a7ad6;
+  text-transform: uppercase;
+  padding: 0.5rem 0;
+}
+
+.texte-adhesion p {
+  padding-bottom: 0.8rem;
+}
+
+/* Le conteneur principal */
+.grille-tarifaire {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  width: 20rem;
+  max-width: 500px;
+  height: auto;
+  border : 5px solid #0ab8d6;
+  border-radius: 20px;
+  padding: 2rem;
+  margin: 0 auto; /* Centrage horizontal dans la section */
+}
+
+.grille-tarifaire h2 {
+  color: #0a7ad6;
+}
+
+.grille-tarifaire hr {
+  background-color: #0a7ad6;
+  padding-bottom: 0;
+  padding : 0.2rem;
+}
+.grille-tarifaire p {
+  justify-content: center;
+  text-align: center;
+  font-family: "Rubik", sans-serif;
+}
+
+.grille-tarifaire ul {
+  padding: 0 0 0 2rem;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem; /* Espacement entre les éléments de la liste */
+}
+
+.grille-tarifaire a {
+  color: #ffff;
+  background-color: #0aa0bb;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  padding: 0.75rem 2rem;
+  
 }
 
 /* =========================================================

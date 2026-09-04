@@ -30,7 +30,37 @@
         </header>
 
         <main>
-            
+            <!-- FORMULAIRE D'ADHESION -->
+            <section class="adhesion">
+                <div class="grille-tarifaire">
+                    <h2>Devenez membre</h2>
+                    <p>Rejoignez notre communauté et participez à nos activités culturelles !</p>
+                    <a href="#" class="btn btn-accent">Adhérer maintenant</a>
+                </div>
+                <form action="#" method="POST" class="formulaire-adhesion">
+                    <div class="form-row-double">
+                        <input type="text" id="nom" name="nom" placeholder="Votre nom complet *" required>
+                        <input type="email" id="email" name="email" placeholder="Votre adresse e-mail *" required>
+                    </div>
+
+                    <div class="form-row-double">
+                        <input type="tel" id="telephone" name="telephone" placeholder="Votre téléphone (optionnel)">
+                        <select id="profil" name="profil" required>
+                            <option value="" disabled selected>Vous êtes... *</option>
+                            <option value="particulier">Un particulier</option>
+                            <option value="entreprise">Une entreprise</option>
+                            <option value="autre">Un autre organisme</option>
+                        </select>
+                    </div>
+
+                    <div class="form-rgpd">
+                        <input type="checkbox" id="rgpd" name="rgpd" required>
+                        <label for="rgpd">En soumettant ce formulaire, j'accepte que mes données soient exploitées dans le cadre de mon adhésion. *</label>
+                    </div>
+
+                    <button type="submit" class="btn btn-accent btn-full">Envoyer le formulaire d'adhésion</button>
+                </form>
+            </section>
         </main>
 
         <footer id="contact">
