@@ -65,7 +65,7 @@ body {
 section {
   width: 100%;
   max-width: none;
-  padding: 0 10rem;
+  padding: 2rem 9rem;
 }
 
 .separateur-titre {
@@ -111,6 +111,17 @@ h4{
   margin: 0.5rem 0;
 }
 
+h5{
+    font-family: var(--font-body);
+    font-weight: 900;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: #FF6B35;
+    text-shadow: 1px 1px 3px rgba(255, 50, 100, 0.3);
+    margin: 0rem 0rem 0.8rem 0rem;
+}
+
 p { 
   font-size: 1rem;
   margin: 0; 
@@ -122,8 +133,8 @@ a {
 }
 
 img {
-  display: block;
   width: 100%;
+  height: 100%;
   max-width: 100%;
   height: auto; /* S'adapte naturellement */
   object-fit: cover; /* Adapte le conteneur au contenue visuel */

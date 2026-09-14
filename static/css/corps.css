@@ -73,33 +73,44 @@ main {
 ========================================================= */
 
 .prestations-section {
-  background-color: #ffff;
-  padding: 4rem 10rem;
+  background-color: #ffffff;
+  padding: 8rem 9rem;
   margin: 0;
 }
 
+.prestations-section h5{
+  text-align: center;
+}
+
+.prestations-section h2 {
+  margin-bottom: 1em;
+  text-align: center;
+}
+
+/* --- Conteneur de la grille --- */
 .bento-prestations {
     display: grid;
-    grid-template-columns: 1fr; 
-    gap: 3.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 1.5rem;
     width: 100%;
     margin: 0 auto;
 }
 
+/* --- Les Cartes --- */
 .bento-card {
     display: flex;
-    align-items: flex-end; /* Pousse automatiquement la légende tout en bas */
-    position: relative; /* Indispensable pour pouvoir superposer l'image et le texte */
-    height: 500px; /* Une hauteur convenable et élégante pour des photos */
-    border-radius: 30px;
-    overflow: hidden; /* Empêche l'image de dépasser des coins arrondis */
+    align-items: flex-end;
+    position: relative;
+    height: 250px;
+    border-radius: 20px;
+    overflow: hidden;
     border: 1px solid #3a3a3c;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
 .bento-card img {
-    position: absolute; /* Place l'image derrière le texte */
+    position: absolute;
     top: 0;
     left: 0;
     z-index: 1;
@@ -114,38 +125,35 @@ main {
     position: relative;
     z-index: 2; /* Assure que le texte est bien au-dessus de l'image */
     width: 100%;
-    padding: 2rem;
+    padding: 1rem 2rem;
     background: linear-gradient(to top, rgba(26, 26, 28, 0.9) 0%, rgba(26, 26, 28, 0) 100%);
     transition: background-color 0.3s ease;
 }
 
 .bento-legende h3 {
-    color : #ffff;
+    color: #ffffff;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-    line-height: 0.05;
+    line-height: 1.2;
+    margin: 0.5rem 0;
 }
 
 .bento-legende p {
     color: #f1f1f1;
     line-height: 1.4;
+    margin: 0;
 }
 
-
-/* 1. La carte monte un peu */
+/* --- Survole --- */
 .bento-card:hover {
     transform: translateY(-5px);
     border-color: var(--color-accent);
 }
 
-/* 2. L'image zoome très légèrement en arrière-plan */
 .bento-card:hover img {
     transform: scale(1.05);
 }
 
-/* 3. La coloration de la légende */
 .bento-card:hover .bento-legende {
-    /* Ici, j'applique une couleur sombre et élégante pour faire ressortir le texte. 
-       Tu peux aussi mettre ton orange : rgba(255, 107, 0, 0.7) */
     background-color: rgba(26, 26, 28, 0.85); 
 }
 
@@ -153,11 +161,15 @@ main {
     MODALITÉS DE PRESTATIONS
 ========================================================= */
 .prestations-modalites {
+  display: flex;
+  flex-direction: column;
   background-color: var(--color-border);
+
 }
 
+/* == Titre principale == */
 .prestations-modalites h3 {
-  color: #cfb41b;
+  color: #ce811c;
   padding: 2rem 0 0.2rem 0;
   margin : 0;
   font-size: 2rem;
@@ -165,30 +177,106 @@ main {
   font-family: "Rubik", sans-serif;
 }
 
+/* == Séparateur titre == */
 .prestations-modalites .separateur-titre {
-  color: #cfb41b;
-  background-color: #cfb41b;
+  color: #ce811c;
+  background-color: #ce811c;
   padding : 0.3rem 0;
   margin-left: 0;
   width: 80px;
 }
 
-.prestations-modalites p {
-  color: #f1f1f1;
-  font-size: 1.1rem;
-  line-height: 1.5;
-  padding: 1rem 20rem 0 0;
-  margin-bottom: 1rem;
-  max-width: 80ch;
+/* == Bloc grille texte + liste == */
+.prestations-modalites div {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin: 1rem 0;
 }
 
-.prestations-modalites a {
-  color: #ffff;
-  background-color: #c2970b;
+/* == Bloc texte == */
+#invitation{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+#invitation p {
+  color: #f1f1f1;
+  line-height: 1.5;
+  padding: 0;
+  max-width: 80%;
+  text-align : justify;
+}
+
+#invitation a {
+  color: #ffffff8a;
+  background-color: #B7430A;
   font-family: "Rubik", sans-serif;
   font-weight: 600;
   margin: 1rem 0 2rem 0;
 }
+
+/* - Le conteneur principal des listes - */
+#event-client {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem;
+  width: 400px;
+  background-color: #1e1e1e;
+  border: 1px solid #333333;
+  border-radius: var(--radius-m);
+  font-family: var(--font-body);  
+}
+
+list
+#event-client h6 {
+    font-family: var(--font-display);
+    color: #ffffff;
+    font-size: 1.5rem;
+    margin-top: 0;
+    letter-spacing: 0.5px;
+}
+
+/* 2. LA MAGIE EST ICI : On crée un "bloc invisible" centré dans la carte */
+#event-client h6, 
+#event-client ul, 
+#event-client hr {
+    width: 100%;
+    max-width: 320px; /* Largeur de ton texte. À augmenter ou réduire si besoin */
+    margin-left: auto; /* Pousse le bloc vers le centre */
+    margin-right: auto; /* Pousse le bloc vers le centre */
+}
+
+/* --- Le reste de tes éléments --- */
+
+
+#event-client hr {
+    border: none;
+    border-top: 1px solid #333333;
+    margin: 2rem auto; /* On garde tes 2rem en haut/bas, et "auto" centre la ligne gauche/droite */
+}
+
+#event-client ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#event-client li {
+    color: #a0aab2;
+    font-size: 1rem;
+    line-height: 1.8; 
+    position: relative;
+    padding: 0;
+    margin-bottom: 0.3rem;
+}
+
+#event-client li::before {
+    content: "";
+}
+
 
 /* =========================================================
    SECTION - ADHÉSION
@@ -197,7 +285,6 @@ main {
   display: grid;
   grid-template-columns: 1fr 1fr;
   background-color: #ffff;
-  padding: 6rem 10rem;
   height: auto;
 }
 
@@ -258,7 +345,6 @@ main {
   letter-spacing: 0.02em;
   text-transform: uppercase;
   padding: 0.75rem 2rem;
-  
 }
 
 /* =========================================================
