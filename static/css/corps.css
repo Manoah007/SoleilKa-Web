@@ -193,7 +193,7 @@ main {
 /* =========================================================
    SECTION - ADHÉSION
 ========================================================= */
-.adhesion {
+.inscription {
   display: grid;
   grid-template-columns: 1fr 1fr;
   background-color: #ffff;
@@ -201,13 +201,13 @@ main {
   height: auto;
 }
 
-.texte-adhesion h2 {
+.texte-inscription h2 {
   color: #0a7ad6;
   text-transform: uppercase;
   padding: 0.5rem 0;
 }
 
-.texte-adhesion p {
+.texte-inscription p {
   padding-bottom: 0.8rem;
 }
 

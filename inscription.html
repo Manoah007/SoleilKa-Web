@@ -7,7 +7,11 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Association Soleil Ka</title>
-        <link rel="stylesheet" href="../static/css/style.css">
+        <link rel="stylesheet" href="static/css/style.css">
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+        <script src="static/js/main.js" defer></script>
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Rubik:wght@400;700;900&display=swap" rel="stylesheet">
     </head>
 
 
@@ -15,18 +19,19 @@
     <body>
 
         <header class="header">
-            <a href="index.html" class="header-logo"> 
-                <img src="../static/img/logo-SK.png" alt="Logo de Soleil Ka">
-                <h3>Soleil Ka</h3> 
+            <a href="accueil.html" class="header-logo">
+                <img src="static/img/logo-SK.png" alt="Logo de Soleil Ka">
+                <h3>Soleil Ka</h3>
             </a>
             
             <nav class="header-nav">
-                <a href="index.html">Accueil</a>
+                <a href="#accueil">Accueil</a>
+                <a href="#prestations">Préstations</a>
+                <a href="#adhesion">Adhésion</a>
                 <a href="histoire.html">Histoire culturelle</a>
-                <a href="adhesion.html">Rejoignez-nous</a>
             </nav>
             
-            <a href="contact.html" class="btn btn-don">♥ Don</a>
+            <a href="don.html" class="btn btn-don">♥ Don</a>
         </header>
 
         <main>
@@ -103,7 +108,7 @@
                     </div>
 
 
-                    <form action="#" method="POST" class="formulaire-contact">
+                    <form action="#" method="POST" class="formulaire-contact" id="form-soleilka">
         
                         <div class="form-row-double">
                             <input type="text" id="nom" name="nom" placeholder="Votre nom complet *" required>
@@ -143,14 +148,13 @@
             </section>
                 
 
-
             <section class="footer-layer-more"> 
                 <div class="footer-more">
 
                     <div class="description">
 
                         <div class="footer-logo">
-                            <img src="../static/img/logo-SK.png" alt="Logo de Soleil Ka">
+                            <img src="static/img/logo-SK.png" alt="Logo de Soleil Ka">
                             <h3>Soleil Ka</h3> 
                         </div>
 
@@ -192,8 +196,6 @@
             </section>
 
         </footer>
-
-        <script src="../static/js/main.js"></script>
 
     </body>
 
