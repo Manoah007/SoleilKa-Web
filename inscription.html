@@ -19,43 +19,39 @@
     <body>
 
         <header class="header">
-            <a href="accueil.html" class="header-logo">
+            <a href="index.html" class="header-logo">
                 <img src="static/img/logo-SK.png" alt="Logo de Soleil Ka">
                 <h3>Soleil Ka</h3>
             </a>
             
             <nav class="header-nav">
-                <a href="#accueil">Accueil</a>
-                <a href="#prestations">Préstations</a>
-                <a href="#adhesion">Adhésion</a>
+                <a href="index.html">Accueil</a>
+                <a href="inscription.html">Adhésion</a>
                 <a href="histoire.html">Histoire culturelle</a>
             </nav>
             
-            <a href="don.html" class="btn btn-don">♥ Don</a>
+            <a href="LIEN_HELLOASSO" class="btn btn-don" target="_blank">♥ Don</a>
         </header>
 
         <main>
             <!-- FORMULAIRE D'ADHESION -->
-            <section class="adhesion">
-                <div class="grille-tarifaire">
+            <section class=".inscription-adh">
+                <div class="grille-adhesion">
                     <h2>Devenez membre</h2>
                     <p>Rejoignez notre communauté et participez à nos activités culturelles !</p>
-                    <a href="#" class="btn btn-accent">Adhérer maintenant</a>
+                    <hr class="separateur-titre">
                 </div>
-                <form action="#" method="POST" class="formulaire-adhesion">
+                
+                <form action="#" method="POST" class="formulaire-adhesion" id="form-adh">
+
+                    <input type="hidden" name="_next" value="https://www.helloasso.com/associations/soleil-ka/adhesions/TON_LIEN">
+
                     <div class="form-row-double">
                         <input type="text" id="nom" name="nom" placeholder="Votre nom complet *" required>
                         <input type="email" id="email" name="email" placeholder="Votre adresse e-mail *" required>
+                        <input type="tel" id="telephone" name="telephone" placeholder="Votre téléphone (optionnel)">
                     </div>
 
-                    <div class="form-row-double">
-                        <input type="tel" id="telephone" name="telephone" placeholder="Votre téléphone (optionnel)">
-                        <select id="profil" name="profil" required>
-                            <option value="" disabled selected>Vous êtes... *</option>
-                            <option value="particulier">Un particulier</option>
-                            <option value="entreprise">Une entreprise</option>
-                            <option value="autre">Un autre organisme</option>
-                        </select>
                     </div>
 
                     <div class="form-rgpd">

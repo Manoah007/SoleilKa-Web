@@ -1,24 +1,26 @@
 emailjs.init("wGjdf46DQmql1DUKB");
 
-const formulaire = document.getElementById('form-soleilka');
 
-if (formulaire) {
-    formulaire.addEventListener('submit', function(event) {
+
+const formulaire_contact = document.getElementById('form-soleilka');
+
+if (formulaire_contact) {
+    formulaire_contact.addEventListener('submit', function(event) {
         event.preventDefault();
 
 
         emailjs.sendForm('mail-auto_test1', 'template_huqsuz9', this)
             .then(function() {
                 alert('Bienvenue chez Soleil Ka ! Ta demande est envoyée.');
-                formulaire.reset();
+                formulaire_contact.reset();
             }, function(erreur) {
                 alert('Oups, petit couac technique : ' + JSON.stringify(erreur));
             });
     });
 }
 
-const header = document.querySelector('.header');
 
+const header = document.querySelector('.header');
 
 if (header) {
     window.addEventListener('scroll', () => {

@@ -161,208 +161,438 @@ main {
     MODALITÉS DE PRESTATIONS
 ========================================================= */
 .prestations-modalites {
-  display: flex;
-  flex-direction: column;
-  background-color: var(--color-border);
-
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-border); /* Fond très sombre */
+    padding: 4rem 10rem; /* Donne de l'air à ta section (à réduire sur mobile) */
 }
 
-/* == Titre principale == */
+/* == Titre principal == */
 .prestations-modalites h3 {
-  color: #ce811c;
-  padding: 2rem 0 0.2rem 0;
-  margin : 0;
-  font-size: 2rem;
-  font-weight: 800;
-  font-family: "Rubik", sans-serif;
+    color: #ce811c;
+    margin: 0 0 1rem 0;
+    font-size: 2rem;
+    font-weight: 800;
+    font-family: "Rubik", sans-serif;
+    text-transform: uppercase;
 }
 
 /* == Séparateur titre == */
 .prestations-modalites .separateur-titre {
-  color: #ce811c;
-  background-color: #ce811c;
-  padding : 0.3rem 0;
-  margin-left: 0;
-  width: 80px;
+    background-color: #ce811c;
+    height: 8px; /* Définit la vraie épaisseur du trait */
+    border: none;
+    border-radius: 4px; /* Rend les bords du trait légèrement arrondis */
+    margin: 0 0 3rem 0; /* Laisse un bel espace en dessous du trait */
+    margin-left: 0;
+    width: 80px;
 }
 
-/* == Bloc grille texte + liste == */
-.prestations-modalites div {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-  margin: 1rem 0;
+/* == Bloc grille (Texte à gauche / Cartes à droite) == */
+/* ATTENTION : Remplace "div" par cette classe pour ne pas casser tes enfants */
+.grille-modalites {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem; /* Espace entre le texte et les cartes */
+    align-items: start; /* Aligne le tout vers le haut */
 }
 
-/* == Bloc texte == */
-#invitation{
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 1rem;
+/* ========================================= */
+/* COLONNE GAUCHE : TEXTE & BOUTON           */
+/* ========================================= */
+
+#invitation {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
 }
 
 #invitation p {
-  color: #f1f1f1;
-  line-height: 1.5;
-  padding: 0;
-  max-width: 80%;
-  text-align : justify;
+    color: #f1f1f1;
+    line-height: 1.6;
+    padding: 0;
+    margin: 0;
+    max-width: 90%;
+    text-align: justify;
 }
 
+/* Le bouton Contactez-nous */
 #invitation a {
-  color: #ffffff8a;
-  background-color: #B7430A;
-  font-family: "Rubik", sans-serif;
-  font-weight: 600;
-  margin: 1rem 0 2rem 0;
+    color: #ffffff; /* Blanc pur pour mieux lire */
+    background-color: #B7430A; /* Ton orange */
+    font-family: "Rubik", sans-serif;
+    font-weight: 600;
+    text-decoration: none; /* Enlève le trait sous le lien */
+    padding: 0.8rem 2rem; /* Donne la forme du bouton */
+    border-radius: var(--radius-full, 30px); /* Coins très arrondis comme sur l'image */
+    margin-top: 1rem;
+    transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
-/* - Le conteneur principal des listes - */
+#invitation a:hover {
+    transform: translateY(-3px);
+    background-color: #ce811c;
+}
+
+/* ========================================= */
+/* COLONNE DROITE : LES DEUX CARTES SOMBRES  */
+/* ========================================= */
+
 #event-client {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 2rem;
-  width: 400px;
-  background-color: #1e1e1e;
-  border: 1px solid #333333;
-  border-radius: var(--radius-m);
-  font-family: var(--font-body);  
+    display: flex;
+    gap: 1.5rem; 
+    width: 100%;
 }
 
-list
+#event-client hr {
+    display: none; 
+}
+
+#event-client .list {
+    flex: 1; 
+    background-color: #1e1e1e; 
+    border: 1px solid #333333;
+    border-radius: 16px; 
+    padding: 2rem; /* Légèrement réduit pour bien tenir sur deux colonnes */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); 
+}
+
 #event-client h6 {
     font-family: var(--font-display);
-    color: #ffffff;
-    font-size: 1.5rem;
+    color: var(--color-accent); 
+    font-size: 1.3rem;
     margin-top: 0;
+    margin-bottom: 1.5rem;
     letter-spacing: 0.5px;
 }
 
-/* 2. LA MAGIE EST ICI : On crée un "bloc invisible" centré dans la carte */
-#event-client h6, 
-#event-client ul, 
-#event-client hr {
-    width: 100%;
-    max-width: 320px; /* Largeur de ton texte. À augmenter ou réduire si besoin */
-    margin-left: auto; /* Pousse le bloc vers le centre */
-    margin-right: auto; /* Pousse le bloc vers le centre */
-}
-
-/* --- Le reste de tes éléments --- */
-
-
-#event-client hr {
-    border: none;
-    border-top: 1px solid #333333;
-    margin: 2rem auto; /* On garde tes 2rem en haut/bas, et "auto" centre la ligne gauche/droite */
-}
-
 #event-client ul {
-    list-style-type: none;
+    list-style-type: none; 
     padding: 0;
+    margin: 0;
 }
 
 #event-client li {
-    color: #a0aab2;
-    font-size: 1rem;
+    color: #a0aab2; 
+    font-family: var(--font-body);
+    font-size: 0.95rem;
     line-height: 1.8; 
+    margin-bottom: 0.8rem;
     position: relative;
-    padding: 0;
-    margin-bottom: 0.3rem;
+    padding-left: 1.2rem; 
 }
 
 #event-client li::before {
-    content: "";
+    content: "•";
+    color: #555555; 
+    position: absolute;
+    left: 0;
+    font-size: 1.2rem;
+    top: -2px;
 }
-
 
 /* =========================================================
    SECTION - ADHÉSION
 ========================================================= */
+
+/* 1. Le conteneur principal (Grille 2 colonnes) */
 .inscription {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  background-color: #ffff;
-  height: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 4rem;
+    padding: 4rem 10rem;
+    background-color: var(--color-background); /* Ou background-alt selon ton choix */
+    align-items: center; /* Aligne la carte avec le texte verticalement */
 }
 
+/* 2. La partie Texte (à gauche) */
 .texte-inscription h2 {
-  color: #0a7ad6;
-  text-transform: uppercase;
-  padding: 0.5rem 0;
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    color: var(--color-text-heading);
+    margin-top: 0;
+    margin-bottom: 1.5rem;
 }
 
 .texte-inscription p {
-  padding-bottom: 0.8rem;
+    font-family: var(--font-body);
+    color: var(--color-text-body);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1.2rem;
 }
 
-/* Le conteneur principal */
+/* On met la première phrase en évidence */
+.texte-inscription p:first-of-type {
+    font-weight: 600;
+    color: var(--color-accent);
+    font-size: 1.2rem;
+}
+
+/* 3. Le conteneur de la carte tarif (à droite) */
+.tarif {
+    display: flex;
+    justify-content: center; /* Centre la carte dans sa colonne */
+}
+
+/* 4. Le design de la carte tarifaire (Style Bento Sombre) */
 .grille-tarifaire {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.5rem;
-  width: 20rem;
-  max-width: 500px;
-  height: auto;
-  border : 5px solid #0ab8d6;
-  border-radius: 20px;
-  padding: 2rem;
-  margin: 0 auto; /* Centrage horizontal dans la section */
+    background-color: #1e1e1e; /* Fond sombre */
+    border: 1px solid #333333;
+    border-radius: var(--radius-m); /* Coins arrondis du thème */
+    padding: 3rem;
+    width: 100%;
+    max-width: 420px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Ombre douce */
+    display: flex;
+    flex-direction: column;
 }
 
+/* Titre et texte de la carte */
 .grille-tarifaire h2 {
-  color: #0a7ad6;
+    font-family: var(--font-display);
+    color: #ffffff;
+    font-size: 2.2rem;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
 }
 
-.grille-tarifaire hr {
-  background-color: #0a7ad6;
-  padding-bottom: 0;
-  padding : 0.2rem;
-}
 .grille-tarifaire p {
-  justify-content: center;
-  text-align: center;
-  font-family: "Rubik", sans-serif;
+    color: #a0aab2; /* Gris bleuté élégant */
+    font-family: var(--font-body);
+    font-size: 1rem;
+    margin-bottom: 0;
 }
 
+/* Ligne de séparation fine */
+.separateur-titre {
+    border: none;
+    border-top: 1px solid #333333;
+    margin: 1.5rem 0;
+    width: 100%;
+}
+
+/* 5. La liste des avantages */
 .grille-tarifaire ul {
-  padding: 0 0 0 2rem;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem; /* Espacement entre les éléments de la liste */
+    list-style-type: none;
+    padding: 0;
+    margin: 0 0 2.5rem 0;
 }
 
-.grille-tarifaire a {
-  color: #ffff;
-  background-color: #0aa0bb;
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: 1rem;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-  padding: 0.75rem 2rem;
+.grille-tarifaire li {
+    color: #f1f1f1;
+    font-size: 1rem;
+    line-height: 1.8;
+    position: relative;
+    padding-left: 2rem;
+    margin-bottom: 0.8rem;
 }
+
+/* Puces personnalisées (Un petit check de validation) */
+.grille-tarifaire li::before {
+    content: "✓"; 
+    color: var(--color-accent); /* Le "check" en orange */
+    position: absolute;
+    left: 0;
+    font-weight: 800;
+    font-size: 1.2rem;
+}
+
+/* 6. Le Bouton de prix (Si tu n'as pas déjà défini la classe .btn) */
+.grille-tarifaire .btn {
+    display: block;
+    text-align: center;
+    background-color: var(--color-accent);
+    color: #ffffff;
+    text-decoration: none;
+    padding: 1rem 2rem;
+    border-radius: var(--radius-s);
+    font-weight: 600;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: auto; /* Pousse toujours le bouton tout en bas de la carte */
+}
+
+.grille-tarifaire .btn:hover {
+    background-color: var(--color-accent-hover);
+    transform: translateY(-2px); /* Petit effet de soulèvement au survol */
+}
+
+
+
+
+/* ========================================= */
+/* SECTION - ADHESION PAIEMENT */
+/* ========================================= */
+
+/* 1. Le conteneur principal (Empile de haut en bas et centre) */
+.inscription-adh {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centre tout horizontalement */
+    gap: 3rem; /* Espace entre le bloc de texte et le formulaire */
+    padding: 4rem 1rem; /* Réduction du padding latéral pour les petits écrans */
+}
+
+/* 2. La partie Texte (Au centre) */
+.grille-adhesion {
+    text-align: center; /* Centre le texte lui-même */
+    max-width: 600px; /* Évite que la phrase soit trop étirée et difficile à lire */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centre le bouton sous le texte */
+}
+
+.grille-adhesion h2 {
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    color: var(--color-text-heading);
+    margin-bottom: 1rem;
+    margin-top: 0;
+}
+
+.grille-adhesion p {
+    font-family: var(--font-body);
+    color: var(--color-text-body);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+/* 3. Le bloc Formulaire (En dessous) */
+.formulaire-adhesion {
+    background-color: #ffffff;
+    padding: 2.5rem;
+    border-radius: var(--radius-m);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); 
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    
+    /* Nouvelles règles pour contrôler sa taille au centre */
+    width: 100%;
+    max-width: 900px; /* Le formulaire ne sera pas excessivement large sur un grand écran PC */
+}
+
+/* 4. Les champs mis côte à côte */
+.form-row-double {
+    display: flex;
+    gap: 1.5rem;
+}
+
+/* Chaque champ prend 50% de l'espace dans une ligne double */
+.form-row-double > * {
+    flex: 1;
+}
+
+/* 5. Le design des inputs (champs de saisie) */
+.formulaire-adhesion input[type="text"],
+.formulaire-adhesion input[type="email"],
+.formulaire-adhesion input[type="tel"],
+.formulaire-adhesion select {
+    width: 100%;
+    padding: 1rem 1.2rem;
+    border: 1px solid #d1d5db;
+    border-radius: var(--radius-s);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--color-text-heading);
+    background-color: #f9fafb; /* Fond très légèrement gris */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Effet esthétique quand on clique dans un champ */
+.formulaire-adhesion input:focus,
+.formulaire-adhesion select:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px var(--color-icon-bg); /* Petit halo orange */
+    background-color: #ffffff;
+}
+
+/* 6. La section RGPD */
+.form-rgpd {
+    display: flex;
+    align-items: flex-start; /* Aligne la case avec la 1ère ligne du texte */
+    gap: 0.8rem;
+}
+
+.form-rgpd input[type="checkbox"] {
+    margin-top: 0.3rem; /* Descend un peu la case pour l'aligner au texte */
+    width: 18px;
+    height: 18px;
+    accent-color: var(--color-accent); /* Colore la case cochée en orange */
+    cursor: pointer;
+}
+
+.form-rgpd label {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    line-height: 1.5;
+    cursor: pointer;
+}
+
 
 /* =========================================================
-   RESPONSIVE GLOBAL (Mobiles et Tablettes)
+   RESPONSIVE GLOBAL (Mobiles et Tablettes jusqu'à 900px)
 ========================================================= */
 @media (max-width: 900px) {
-    /* 1. Ajustement des cartes Bento */
-    .bento-card {
-        height: 300px; 
+
+    /* 1. RÉDUCTION DES MARGES GÉANTES SUR TOUTES LES SECTIONS */
+    .prestations-section {
+        padding: 4rem 1.5rem; /* Passe de 9rem à 1.5rem sur les côtés */
+    }
+    .prestations-modalites {
+        padding: 3rem 1.5rem;
+    }
+    .inscription {
+        padding: 3rem 1.5rem;
+        /* Le minmax(400px) initial casse les petits téléphones, on force 1 colonne : */
+        grid-template-columns: 1fr; 
+    }
+    .inscription-adh {
+        padding: 3rem 1.5rem;
     }
 
-    /* 2. Ajustement de la présentation (Accueil) */
+    /* 2. PRÉSENTATION (Accueil) */
     .presentation {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* Empile le texte et l'image */
         gap: 2.5rem;
     }
-  
     .presentation-visual img {
-        max-height: 420px;
+        max-height: 400px;
+        width: 100%;
+        object-fit: cover; /* Empêche l'image de se déformer */
+    }
+    .presentation-content p {
+        max-width: 100%; /* Laisse le texte prendre toute la largeur dispo */
+    }
+
+    /* 3. MODALITÉS (Section Texte + Cartes) */
+    .grille-modalites {
+        grid-template-columns: 1fr; /* Empile la colonne de gauche et de droite */
+        gap: 3rem;
+    }
+    #event-client {
+        flex-direction: column; /* Empile les cartes "Nos évènements" et "Nos clients" */
+    }
+    #invitation p {
+        max-width: 100%;
+    }
+
+    /* 4. FORMULAIRE D'ADHÉSION */
+    .form-row-double {
+        flex-direction: column; /* Met les champs l'un sous l'autre */
+        gap: 1.5rem;
+    }
+    .formulaire-adhesion {
+        padding: 1.5rem; /* Réduit un peu l'espace intérieur du cadre blanc */
+    }
+
+    /* 5. GRILLE BENTO */
+    .bento-card {
+        height: 300px; 
     }
 }

@@ -356,9 +356,75 @@ footer {
     }
 }
 
+/* =========================================================
+   RESPONSIVE GLOBAL FOOTER (Mobiles et Tablettes jusqu'à 900px)
+========================================================= */
 @media (max-width: 900px) {
+
+    /* 1. COUCHE 1 : COORDONNÉES */
+    .footer-contact {
+        grid-template-columns: 1fr; /* On empile toutes les infos */
+        gap: 2rem;
+        text-align: center; /* On centre le texte sur mobile pour un effet plus propre */
+    }
+    
+    /* On force les éléments à s'empiler naturellement (annule les placements précis de la grille PC) */
+    .footer-contact h3:nth-of-type(1),
+    .footer-contact .email,
+    .footer-contact .tel,
+    .footer-contact .reseaux-sociaux {
+        grid-column: 1;
+        grid-row: auto;
+    }
+    
+    .footer-contact .reseaux-sociaux {
+        justify-content: center; /* Si tes liens sociaux sont en flex, cela les centrera */
+    }
+
+    /* 2. COUCHE 2 : FORMULAIRE DE CONTACT */
+    .footer-layer-form {
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem 1.5rem 3rem; /* On réduit drastiquement les marges latérales */
+        gap: 3rem;
+    }
+    
+    .footer-form-description {
+        text-align: center; /* Centre le texte d'intro du formulaire */
+        max-width: 100%;
+    }
+    
+    .footer-form-description .btn-outline {
+        margin-left: 0; /* Enlève la marge de gauche qui déséquilibrait le bouton */
+    }
+
+    .form-row-double {
+        grid-template-columns: 1fr; /* Champs nom et email l'un sous l'autre */
+    }
+    
+    .formulaire-contact {
+        max-width: 100%; /* Le formulaire prend toute la largeur du téléphone */
+    }
+
+    /* 3. COUCHE 3 : FOOTER MORE (Mentions légales & Liens) */
+    .footer-layer-more {
+        padding: 3rem 1.5rem 1rem;
+    }
+
     .footer-more {
-        grid-template-columns: 1fr; /* On empile la présentation et les menus sur 1 colonne */
+        grid-template-columns: 1fr; /* On empile la présentation, les liens et les mentions */
         gap: 2.5rem;
+        text-align: center; /* On centre tout pour le mobile */
+    }
+
+    /* Centre le logo et le titre de l'association */
+    .footer-logo {
+        justify-content: center; 
+    }
+
+    /* Centre le copyright tout en bas */
+    .footer-copyright {
+        text-align: center;
+        margin-top: 2rem;
     }
 }

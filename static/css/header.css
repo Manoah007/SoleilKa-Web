@@ -95,12 +95,21 @@
 /* Responsive basique pour le header */
 @media (max-width: 800px) {
   .header {
-    flex-wrap: wrap;
-    row-gap: 1rem;
-  }
-  .header-nav {
-    order: 3;
-    width: 100%;
-    justify-content: center; /* Centre les liens sur mobile */
-  }
+        flex-wrap: wrap;
+        row-gap: 1rem;
+        padding: 1rem 1.5rem; /* On s'assure que le padding n'est pas trop grand sur mobile */
+    }
+    
+    .header-nav {
+        order: 3; /* Force la navigation à passer sous le logo et le bouton */
+        width: 100%;
+        justify-content: space-evenly; /* Répartit l'espace équitablement entre les liens */
+        gap: 0.5rem;
+        flex-wrap: wrap; /* Sécurité : si tu as beaucoup de liens, ils passeront sur 2 lignes plutôt que de déborder */
+    }
+    
+    .header-nav a {
+        font-size: 0.95rem; /* On réduit très légèrement la taille du texte sur téléphone */
+        padding: 0.5rem 0; /* Un peu plus d'espace cliquable pour les gros doigts sur tactile */
+    }
 }
