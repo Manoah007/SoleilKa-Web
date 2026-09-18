@@ -1,5 +1,5 @@
 /* ====================== 
-  Présentation d'acceuil 
+  Présentation d'accueil 
   ====================== */
 body { background-color: var(--color-background); }
 
@@ -34,7 +34,7 @@ main {
   align-items: center;
   gap: 2%;
   font-family: var(--font-body);
-  font-size: 0.8rem;
+  font-size: 85%;
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -46,7 +46,7 @@ main {
 
 .presentation-content hr {
   margin: 0.5rem 0 0.5rem 0;
-  background-color: var(--color-accent); /* Utilise ton orange chaleureux */
+  background-color: var(--color-accent);
 }
 
 .presentation-content div {
@@ -69,6 +69,11 @@ main {
   box-shadow: 0 20px 45px rgba(26, 26, 26, 0.15);
 }
 
+
+
+
+
+
 /* =========================================================
    STYLE - SECTION PRESTATIONS 
 ========================================================= */
@@ -79,9 +84,7 @@ main {
   margin: 0;
 }
 
-.prestations-section h5{
-  text-align: center;
-}
+.prestations-section h5{ text-align: center; }
 
 .prestations-section h2 {
   margin-bottom: 1em;
@@ -118,9 +121,7 @@ main {
     transition: transform 0.5s ease; /* Pour un effet de zoom doux au survol */
 }
 
-#patisserie, #danse, #defile {
-    object-position: center;
-}
+#patisserie, #danse, #defile { object-position: center; }
 
 .bento-legende {
     position: relative;
@@ -150,119 +151,91 @@ main {
     border-color: var(--color-accent);
 }
 
-.bento-card:hover img {
-    transform: scale(1.05);
-}
+.bento-card:hover img { transform: scale(1.05); }
+.bento-card:hover .bento-legende { background-color: rgba(26, 26, 28, 0.85); }
 
-.bento-card:hover .bento-legende {
-    background-color: rgba(26, 26, 28, 0.85); 
-}
+
+
+
+
+
+
 
 /* =========================================================
     MODALITÉS DE PRESTATIONS
 ========================================================= */
-.prestations-modalites {
-    display: flex;
-    flex-direction: column;
-    background-color: var(--color-border); /* Fond très sombre */
-    padding: 4rem 10rem; /* Donne de l'air à ta section (à réduire sur mobile) */
+#modalite {
+    padding: 9% 0 3% 0;
 }
 
-/* == Titre principal == */
-.prestations-modalites h3 {
-    color: #ce811c;
-    margin: 0 0 1rem 0;
-    font-size: 2rem;
-    font-weight: 800;
-    font-family: "Rubik", sans-serif;
-    text-transform: uppercase;
+/*=== Titre "Modalité" ===*/
+#modalite h2 {
+    text-align: center;
+    padding : 0;
+    margin : 0;
+    color :#B7430A
 }
 
 /* == Séparateur titre == */
-.prestations-modalites .separateur-titre {
-    background-color: #ce811c;
-    height: 8px; /* Définit la vraie épaisseur du trait */
+#modalite .separateur-titre {
     border: none;
-    border-radius: 4px; /* Rend les bords du trait légèrement arrondis */
-    margin: 0 0 3rem 0; /* Laisse un bel espace en dessous du trait */
-    margin-left: 0;
+    border-radius: 4px;
     width: 80px;
+    height: 8px;
+    background-color: #B7430A;
+    margin: 1rem auto 2rem auto;
 }
 
-/* == Bloc grille (Texte à gauche / Cartes à droite) == */
-/* ATTENTION : Remplace "div" par cette classe pour ne pas casser tes enfants */
-.grille-modalites {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem; /* Espace entre le texte et les cartes */
-    align-items: start; /* Aligne le tout vers le haut */
-}
-
-/* ========================================= */
-/* COLONNE GAUCHE : TEXTE & BOUTON           */
-/* ========================================= */
-
-#invitation {
+#modalite-contenu{
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    gap: 1.5rem;
-}
-
-#invitation p {
-    color: #f1f1f1;
-    line-height: 1.6;
-    padding: 0;
-    margin: 0;
-    max-width: 90%;
-    text-align: justify;
-}
-
-/* Le bouton Contactez-nous */
-#invitation a {
-    color: #ffffff; /* Blanc pur pour mieux lire */
-    background-color: #B7430A; /* Ton orange */
-    font-family: "Rubik", sans-serif;
-    font-weight: 600;
-    text-decoration: none; /* Enlève le trait sous le lien */
-    padding: 0.8rem 2rem; /* Donne la forme du bouton */
-    border-radius: var(--radius-full, 30px); /* Coins très arrondis comme sur l'image */
-    margin-top: 1rem;
-    transition: transform 0.2s ease, background-color 0.2s ease;
-}
-
-#invitation a:hover {
-    transform: translateY(-3px);
-    background-color: #ce811c;
-}
-
-/* ========================================= */
-/* COLONNE DROITE : LES DEUX CARTES SOMBRES  */
-/* ========================================= */
-
-#event-client {
-    display: flex;
-    gap: 1.5rem; 
+    align-items: center;
     width: 100%;
 }
 
-#event-client hr {
-    display: none; 
+/*=== Texte explicatif ===*/
+#invitation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom : 2rem;
+}
+
+#invitation p {
+    color: #1A1A1A;
+    line-height: 1.6;
+    padding: 0;
+    margin: 0;
+    max-width: 100%;
+    text-align: center;
+}
+
+
+/*=== Liste design ===*/
+#event-client {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    width: 60%;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 #event-client .list {
-    flex: 1; 
-    background-color: #1e1e1e; 
-    border: 1px solid #333333;
+    background-color: #F5F0E8; 
     border-radius: 16px; 
     padding: 2rem; /* Légèrement réduit pour bien tenir sur deux colonnes */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); 
+    flex: 1 1 300px;
+    max-width: 300px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 #event-client h6 {
     font-family: var(--font-display);
     color: var(--color-accent); 
-    font-size: 1.3rem;
+    font-size: 150%;
     margin-top: 0;
     margin-bottom: 1.5rem;
     letter-spacing: 0.5px;
@@ -275,10 +248,11 @@ main {
 }
 
 #event-client li {
-    color: #a0aab2; 
+    color: #1A1A1A;
     font-family: var(--font-body);
     font-size: 0.95rem;
-    line-height: 1.8; 
+    font-weight: 400;
+    line-height: 1.8;
     margin-bottom: 0.8rem;
     position: relative;
     padding-left: 1.2rem; 
@@ -286,12 +260,19 @@ main {
 
 #event-client li::before {
     content: "•";
-    color: #555555; 
+    color: #1A1A1A; 
     position: absolute;
     left: 0;
     font-size: 1.2rem;
     top: -2px;
 }
+
+
+
+
+
+
+
 
 /* =========================================================
    SECTION - ADHÉSION
@@ -539,6 +520,55 @@ main {
 /* =========================================================
    RESPONSIVE GLOBAL (Mobiles et Tablettes jusqu'à 900px)
 ========================================================= */
+@media (max-width: 900px) {
+
+    .presentation-content h3 { font-size : 75%; }
+    
+    .bento-prestations {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+        gap: 1.5rem;
+        width: 100%;
+        padding-bottom : 10%;
+        margin: 0 auto;
+    }
+
+    .bento-card {
+        display: flex;
+        align-items: flex-end;
+        position: relative;
+        border-radius: 20px;
+        overflow: hidden;
+        border: 1px solid #3a3a3c;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+
+    #modalite {
+        padding: 9% 1.5rem 3% 1.5rem; 
+    }
+
+    #event-client hr { display: none; }
+
+    #event-client {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        width: 100%;
+        max-width: none;
+        margin: 0 auto;
+    }
+
+    #event-client .list {
+        background-color: #F5F0E8; 
+        border-radius: 16px; 
+        padding: 2rem; /* Légèrement réduit pour bien tenir sur deux colonnes */
+        flex: 1 1 300px;
+        max-width: 100%;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+}
+
 @media (max-width: 900px) {
 
     /* 1. RÉDUCTION DES MARGES GÉANTES SUR TOUTES LES SECTIONS */

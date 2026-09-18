@@ -15,10 +15,13 @@
 :root {
   /* Couleurs principales (fournies) */
   --color-background: #F5F0E8;
+
   --color-text-heading: #1A1A1A;
-  --color-accent: #B7430A;
-  --color-accent-don: #B70800;
   --color-text-body: #3D4A5C;
+
+  --color-accent: #B7430A;
+
+  
   --color-border: #1A1A1A;
   --color-button-text: #FFFFFF;
 
@@ -53,6 +56,10 @@
    ========================================================================== */
   
 html { scroll-behavior: smooth; }
+
+* {
+    box-sizing: border-box;
+}
 
 body {
   margin: 0;
@@ -136,7 +143,6 @@ img {
   width: 100%;
   height: 100%;
   max-width: 100%;
-  height: auto; /* S'adapte naturellement */
   object-fit: cover; /* Adapte le conteneur au contenue visuel */
   border-radius: var(--radius-m);
 }
