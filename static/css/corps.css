@@ -32,7 +32,7 @@ main {
 .presentation-content h3 {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 2%;
   font-family: var(--font-body);
   font-size: 0.8rem;
   font-weight: 600;
@@ -40,7 +40,7 @@ main {
   text-transform: uppercase;
   color: var(--color-accent);
   background: var(--color-icon-bg);
-  padding: 0.5rem 1rem;
+  padding: 2% 3%;
   border-radius: var(--radius-full);
 }
 
@@ -52,12 +52,13 @@ main {
 .presentation-content div {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem; /* Espacement vertical entre les paragraphes */
+  gap: 0.5rem;
 }
 .presentation-content p {
   max-width: 46ch;
   padding: 0;
   margin: 0;
+  text-align: justify;
 }
 
 .presentation-visual { 

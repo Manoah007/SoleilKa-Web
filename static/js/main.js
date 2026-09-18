@@ -1,7 +1,10 @@
 emailjs.init("wGjdf46DQmql1DUKB");
 
 
-
+/*===============
+    Permet l'envoie de mail automatique quand le formulaire de contact
+    est validé
+================*/
 const formulaire_contact = document.getElementById('form-soleilka');
 
 if (formulaire_contact) {
@@ -19,7 +22,9 @@ if (formulaire_contact) {
     });
 }
 
-
+/*===================================================
+    Gère l'effet du menu lorsque l'on scroll la page
+=====================================================*/
 const header = document.querySelector('.header');
 
 if (header) {
@@ -32,3 +37,14 @@ if (header) {
       }
     });
 }
+
+/*===========================================================================
+    Crée un menu latérale pour les résolutation plus petites (ex: mobile)
+===========================================================================*/
+const burgerBtn = document.getElementById('burger-btn');
+const nav = document.querySelector('.header-nav-mobile'); /* Modification ici */
+
+burgerBtn.addEventListener('click', () => {
+    nav.classList.toggle('nav-active');
+    burgerBtn.classList.toggle('toggle');
+});

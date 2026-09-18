@@ -17,19 +17,49 @@
     <body>
 
         <header class="header">
-            <a href="accueil.html" class="header-logo">
+            <div class="header-logo">
                 <img src="static/img/logo-SK.png" alt="Logo de Soleil Ka">
                 <h3>Soleil Ka</h3>
-            </a>
+            </div>
             
+            <!-- MENU VERSION ORDI -->
             <nav class="header-nav">
                 <a href="#accueil">Accueil</a>
                 <a href="#prestations">Préstations</a>
                 <a href="#inscription">Adhésion</a>
                 <a href="histoire.html">Histoire culturelle</a>
             </nav>
-            
-            <a href="LIEN_HELLOASSO" class="btn btn-don" target="_blank">♥ Don</a>
+
+
+            <a href="LIEN_HELLOASSO" class="btn btn-don" id="disp" target="_blank">♥ Don</a>
+
+            <!-- MENU VERSION MOBILE -->
+            <button class="burger-menu" id="burger-btn" aria-label="Ouvrir le menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+
+            <nav class="header-nav-mobile">
+
+                <hr class="menu-separateur">
+
+                <h3>Navigation</h3>
+                <a href="#accueil">Accueil</a>
+                <a href="#prestations">Préstations</a>
+                <a href="#inscription">Adhésion</a>
+                <a href="histoire.html">Histoire culturelle</a>
+                
+
+                <hr class="menu-separateur">
+
+                <div id="soutien" class="menu-soutien"> 
+                    <h3>Soutenez-nous !</h3>
+                    <a href="inscription.html">Devenez adhérent</a>
+                    <a href="LIEN_HELLOASSO" target="_blank">Don</a>
+                </div>
+            </nav>
         </header>
 
 
