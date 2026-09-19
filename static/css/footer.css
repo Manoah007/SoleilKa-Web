@@ -1,23 +1,25 @@
-/* ==========================================================================
-   Pied de page (footer.css)
-   ========================================================================== */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 footer {
     width: 100%;
     background-color: var(--color-footer-bg);
-    padding: 0; /* On supprime le padding ici pour laisser les couches toucher les bords ! */
+    padding: 0;
     display: flex;
-    flex-direction: column; /* Force l'empilement vertical des 3 couches */
+    flex-direction: column;
     border-radius: 75px 75px 0 0;
-    overflow: hidden; /* Empêche le fond noir du bas de casser l'arrondi en haut */
+    overflow: hidden;
 }
 
-.footer-divider-container{
+.footer-divider-container {
         width: 100%;
         display: block;
-        justify-content: center; /* Centre le séparateur horizontalement */
+        justify-content: center;
     }
 
-/* Séparateur */
 .footer-divider {
     border: none;
     height: 1px;
@@ -26,28 +28,33 @@ footer {
     max-width: 1200px;
     margin: 3rem auto 1.5rem;
 }
-/* =========================================================
-   COUCHE 1 : COORDONNÉES (.footer-layer-contact)
-========================================================= */
 
-/* Propriétés générales des deux grands container */
 .footer-layer-contact {
     width: 100%;
-    padding: 4rem 0 1rem; /* Le padding horizontal est désormais géré par .footer-contact (voir ci-dessous) */
+    padding: 4rem 0 1rem;
 }
+
+
+
+
+
+
+
+/*==============
+   SECTION CONTACT
+===================*/
 
 .footer-contact {
     display: grid;
     grid-template-columns: max-content max-content 1fr;
     gap: 1rem 5rem;
     width: 100%;
-    max-width: 1200px; /* Aligné avec la largeur du formulaire */
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 0 var(--gutter); /* Padding appliqué APRÈS le centrage, comme .footer-layer-form, pour un alignement identique */
+    padding: 0 var(--gutter);
     font-style: normal;
 }
 
-/* Le 1er <h3> ("Coordonnées") s'étale sur les colonnes 1 et 2 */
 .footer-contact h3:nth-of-type(1) {
     grid-column: 1 / 3;
     grid-row: 1;
@@ -59,16 +66,12 @@ footer {
 .footer-contact .tel { grid-column: 2 / 3; grid-row: 2; }
 .footer-contact .reseaux-sociaux { grid-column: 3 / 4; grid-row: 2; }
 
-
-
-/* Retouche esthétique pour les textes (labels) */
 .footer-contact p {
     color: var(--color-text-muted);
     font-size: 0.9rem;
     margin-bottom: 0.2rem;
 }
 
-/* Retouche esthétique pour les liens (email, téléphone, réseaux sociaux) */
 .footer-contact a {
     margin: 0;
     font-size: 1.1rem;
@@ -89,7 +92,6 @@ footer {
     transition: width 0.3s ease;
 }
 
-/* Effet de soulignement au survol pour les liens */
 .footer-contact a:hover::after {
     width: 100%;
 }
@@ -98,7 +100,7 @@ footer {
     color: #ffffff;
 }
 
-.footer-contact a:active{
+.footer-contact a:active {
     color: var(--color-text-body);
 }
 
@@ -112,10 +114,9 @@ footer {
     grid-row: 3;
 }
 
-/* =========================================================
-   FORMULAIRE (.footer-layer-form)
-========================================================= */
-
+/*===================
+formulaire de contact
+======================*/
 .footer-layer-form {
     width: 100%;
     max-width: 1200px;
@@ -125,7 +126,7 @@ footer {
     justify-content: space-between;
     align-items: flex-start;
     gap: 4rem;
-    flex-wrap: wrap; /* Pour le mobile */
+    flex-wrap: wrap;
 }
 
 .footer-form-description {
@@ -179,7 +180,7 @@ footer {
 }
 
 .formulaire-contact select {
-    appearance: none; /* Enlève le style natif du menu déroulant */
+    appearance: none;
     cursor: pointer;
     color: var(--color-text-muted);
 }
@@ -196,18 +197,13 @@ footer {
     box-shadow: 0 0 0 2px #B87700;
 }
 
-/* =========================================================
-   STYLE DE LA CASE RGPD ET DU BOUTON
-========================================================= */
-
 .form-rgpd {
     display: flex;
-    align-items: flex-start; /* Aligne le texte avec le haut de la case */
+    align-items: flex-start;
     gap: 1rem;
     margin-top: 0.5rem;
 }
 
-/* On "réinitialise" la case à cocher pour écraser le width: 100% des autres inputs */
 .formulaire-contact input[type="checkbox"] {
     width: 18px;
     height: 18px;
@@ -218,17 +214,12 @@ footer {
     accent-color: #B8A300;
 }
 
-/* Règle UNIQUE pour le texte d'accompagnement RGPD (fusion des deux versions dupliquées) */
 .footer-layer-form .formulaire-contact .form-rgpd label {
     color: var(--color-text-muted);
     font-size: 0.85rem;
     line-height: 1.4;
     cursor: pointer;
 }
-
-/* =========================================================
-   FOOTER MORE (.footer-layer-more)
-========================================================= */
 
 .footer-layer-more {
     width: 100%;
@@ -239,7 +230,7 @@ footer {
 
 .footer-more {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr; /* La 1ère colonne prend 2 parts, les deux autres 1 part chacune */
+    grid-template-columns: 2fr 1fr 1fr;
     gap: 5rem;
     width: 100%;
     max-width: 1200px;
@@ -321,108 +312,75 @@ footer {
     margin: 0 auto;
 }
 
-/* =========================================================
-   RESPONSIVE (Mobiles et Tablettes)
-========================================================= */
-@media (max-width: 768px) {
-    .footer-contact {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-        text-align: center;
-    }
 
-    .footer-contact h3:nth-of-type(1),
-    .footer-contact h3:nth-of-type(2),
-    .footer-contact .email,
-    .footer-contact .tel,
-    .footer-contact .socials {
-        grid-column: 1;
-        grid-row: auto;
-    }
-
-    .footer-contact .socials {
-        justify-content: center;
-    }
-
-    .form-row-double {
-        grid-template-columns: 1fr; /* Champs nom et email l'un sous l'autre */
-    }
-
-    .footer-layer-form {
-        flex-direction: column;
-        align-items: center;
-        padding: 3rem 1.5rem;
-        gap: 3rem;
-    }
-}
-
-/* =========================================================
-   RESPONSIVE GLOBAL FOOTER (Mobiles et Tablettes jusqu'à 900px)
-========================================================= */
 @media (max-width: 900px) {
 
-    /* 1. COUCHE 1 : COORDONNÉES */
+    /*=== SECTION CONTACT ===*/
     .footer-contact {
-        grid-template-columns: 1fr; /* On empile toutes les infos */
-        gap: 2rem;
-        text-align: center; /* On centre le texte sur mobile pour un effet plus propre */
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+        text-align: center; 
+        gap: 2rem; /* J'ai mis 2rem pour bien séparer Email, Tel et Insta */
+        padding: 0 1.5rem;
     }
-    
-    /* On force les éléments à s'empiler naturellement (annule les placements précis de la grille PC) */
-    .footer-contact h3:nth-of-type(1),
+
+    .footer-contact h3:nth-of-type(1) {
+        margin-bottom: 0.5rem;
+    }
+
+    /* On s'assure que les 3 blocs (Email, Tel, Insta) se comportent pareil */
     .footer-contact .email,
     .footer-contact .tel,
     .footer-contact .reseaux-sociaux {
-        grid-column: 1;
-        grid-row: auto;
-    }
-    
-    .footer-contact .reseaux-sociaux {
-        justify-content: center; /* Si tes liens sociaux sont en flex, cela les centrera */
+        display: block; 
+        width: 100%;
     }
 
-    /* 2. COUCHE 2 : FORMULAIRE DE CONTACT */
+    /* Animation du soulignement qui part du centre */
+    .footer-contact a::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
     .footer-layer-form {
         flex-direction: column;
         align-items: center;
-        padding: 2rem 1.5rem 3rem; /* On réduit drastiquement les marges latérales */
+        padding: 2rem 1.5rem 3rem;
         gap: 3rem;
     }
-    
+
     .footer-form-description {
-        text-align: center; /* Centre le texte d'intro du formulaire */
+        text-align: center;
         max-width: 100%;
     }
-    
+
     .footer-form-description .btn-outline {
-        margin-left: 0; /* Enlève la marge de gauche qui déséquilibrait le bouton */
+        margin-left: 0;
     }
 
     .form-row-double {
-        grid-template-columns: 1fr; /* Champs nom et email l'un sous l'autre */
-    }
-    
-    .formulaire-contact {
-        max-width: 100%; /* Le formulaire prend toute la largeur du téléphone */
+        grid-template-columns: 1fr;
     }
 
-    /* 3. COUCHE 3 : FOOTER MORE (Mentions légales & Liens) */
+    .formulaire-contact {
+        max-width: 100%;
+    }
+
     .footer-layer-more {
         padding: 3rem 1.5rem 1rem;
     }
 
     .footer-more {
-        grid-template-columns: 1fr; /* On empile la présentation, les liens et les mentions */
+        grid-template-columns: 1fr;
         gap: 2.5rem;
-        text-align: center; /* On centre tout pour le mobile */
+        text-align: center;
     }
 
-    /* Centre le logo et le titre de l'association */
     .footer-logo {
-        justify-content: center; 
+        justify-content: center;
     }
 
-    /* Centre le copyright tout en bas */
     .footer-copyright {
         text-align: center;
         margin-top: 2rem;

@@ -149,6 +149,8 @@ CONTENUE PRINCIPALE POUR MENU
       background-color: var(--color-text-heading);
       border-radius: 2px;
       transition: transform 0.3s ease, opacity 0.3s ease;
+
+      pointer-events: none;
   }
 
   body.no-scroll {
