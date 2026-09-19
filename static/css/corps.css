@@ -1,7 +1,10 @@
 /* ====================== 
   Présentation d'accueil 
   ====================== */
-body { background-color: var(--color-background); }
+body { 
+    background-color: var(--color-background);
+    padding-top: 6%;
+}
 
 main {
   display: grid;
@@ -218,7 +221,7 @@ main {
     justify-content: center;
     flex-wrap: wrap;
     gap: 1rem;
-    width: 60%;
+    width: 70%;
     max-width: 900px;
     margin: 0 auto;
 }
@@ -227,6 +230,7 @@ main {
     background-color: #F5F0E8; 
     border-radius: 16px; 
     padding: 2rem; /* Légèrement réduit pour bien tenir sur deux colonnes */
+    margin : 1rem;
     flex: 1 1 300px;
     max-width: 300px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
@@ -278,17 +282,15 @@ main {
    SECTION - ADHÉSION
 ========================================================= */
 
-/* 1. Le conteneur principal (Grille 2 colonnes) */
 .inscription {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     gap: 4rem;
     padding: 4rem 10rem;
-    background-color: var(--color-background); /* Ou background-alt selon ton choix */
-    align-items: center; /* Aligne la carte avec le texte verticalement */
+    background-color: var(--color-background);
+    align-items: center; 
 }
 
-/* 2. La partie Texte (à gauche) */
 .texte-inscription h2 {
     font-family: var(--font-display);
     font-size: 2.5rem;
@@ -300,25 +302,23 @@ main {
 .texte-inscription p {
     font-family: var(--font-body);
     color: var(--color-text-body);
-    font-size: 1.1rem;
-    line-height: 1.6;
     margin-bottom: 1.2rem;
 }
 
-/* On met la première phrase en évidence */
+
 .texte-inscription p:first-of-type {
     font-weight: 600;
     color: var(--color-accent);
     font-size: 1.2rem;
 }
 
-/* 3. Le conteneur de la carte tarif (à droite) */
+
 .tarif {
     display: flex;
-    justify-content: center; /* Centre la carte dans sa colonne */
+    justify-content: center;
 }
 
-/* 4. Le design de la carte tarifaire (Style Bento Sombre) */
+
 .grille-tarifaire {
     background-color: #1e1e1e; /* Fond sombre */
     border: 1px solid #333333;
@@ -341,21 +341,22 @@ main {
 }
 
 .grille-tarifaire p {
-    color: #a0aab2; /* Gris bleuté élégant */
+    color: #a0aab2;
     font-family: var(--font-body);
     font-size: 1rem;
     margin-bottom: 0;
 }
 
-/* Ligne de séparation fine */
-.separateur-titre {
-    border: none;
-    border-top: 1px solid #333333;
-    margin: 1.5rem 0;
+
+.separateur-grille {
+    display: block;
     width: 100%;
+    height: 0.1px;
+    background-color: #beb2b2;
+    border: none;
+    margin: 1.5rem auto;
 }
 
-/* 5. La liste des avantages */
 .grille-tarifaire ul {
     list-style-type: none;
     padding: 0;
@@ -371,7 +372,6 @@ main {
     margin-bottom: 0.8rem;
 }
 
-/* Puces personnalisées (Un petit check de validation) */
 .grille-tarifaire li::before {
     content: "✓"; 
     color: var(--color-accent); /* Le "check" en orange */
@@ -381,25 +381,6 @@ main {
     font-size: 1.2rem;
 }
 
-/* 6. Le Bouton de prix (Si tu n'as pas déjà défini la classe .btn) */
-.grille-tarifaire .btn {
-    display: block;
-    text-align: center;
-    background-color: var(--color-accent);
-    color: #ffffff;
-    text-decoration: none;
-    padding: 1rem 2rem;
-    border-radius: var(--radius-s);
-    font-weight: 600;
-    font-size: 1.2rem;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    margin-top: auto; /* Pousse toujours le bouton tout en bas de la carte */
-}
-
-.grille-tarifaire .btn:hover {
-    background-color: var(--color-accent-hover);
-    transform: translateY(-2px); /* Petit effet de soulèvement au survol */
-}
 
 
 
@@ -408,11 +389,11 @@ main {
 /* SECTION - ADHESION PAIEMENT */
 /* ========================================= */
 
-/* 1. Le conteneur principal (Empile de haut en bas et centre) */
+
 .inscription-adh {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centre tout horizontalement */
+    align-items: center;
     gap: 3rem; /* Espace entre le bloc de texte et le formulaire */
     padding: 4rem 1rem; /* Réduction du padding latéral pour les petits écrans */
 }
@@ -442,7 +423,7 @@ main {
     margin-bottom: 2rem;
 }
 
-/* 3. Le bloc Formulaire (En dessous) */
+
 .formulaire-adhesion {
     background-color: #ffffff;
     padding: 2.5rem;
@@ -452,13 +433,11 @@ main {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-    
-    /* Nouvelles règles pour contrôler sa taille au centre */
     width: 100%;
-    max-width: 900px; /* Le formulaire ne sera pas excessivement large sur un grand écran PC */
+    max-width: 900px; 
 }
 
-/* 4. Les champs mis côte à côte */
+
 .form-row-double {
     display: flex;
     gap: 1.5rem;
@@ -522,72 +501,23 @@ main {
 ========================================================= */
 @media (max-width: 900px) {
 
-    .presentation-content h3 { font-size : 75%; }
+
+    .prestations-section { padding: 4rem 1.5rem; }
+    .prestations-modalites { padding: 3rem 1.5rem; }
+    .inscription { 
+        padding: 3rem 1.5rem; 
+        grid-template-columns: 1fr; /* Force 1 colonne sur mobile */
+    }
+    .inscription-adh { padding: 3rem 1.5rem; }
     
-    .bento-prestations {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-        gap: 1.5rem;
-        width: 100%;
-        padding-bottom : 10%;
-        margin: 0 auto;
-    }
-
-    .bento-card {
-        display: flex;
-        align-items: flex-end;
-        position: relative;
-        border-radius: 20px;
-        overflow: hidden;
-        border: 1px solid #3a3a3c;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        transition: transform 0.3s ease, border-color 0.3s ease;
-    }
-
-    #modalite {
+    #modalite { 
         padding: 9% 1.5rem 3% 1.5rem; 
     }
 
-    #event-client hr { display: none; }
 
-    #event-client {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        width: 100%;
-        max-width: none;
-        margin: 0 auto;
-    }
 
-    #event-client .list {
-        background-color: #F5F0E8; 
-        border-radius: 16px; 
-        padding: 2rem; /* Légèrement réduit pour bien tenir sur deux colonnes */
-        flex: 1 1 300px;
-        max-width: 100%;
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    }
-}
-
-@media (max-width: 900px) {
-
-    /* 1. RÉDUCTION DES MARGES GÉANTES SUR TOUTES LES SECTIONS */
-    .prestations-section {
-        padding: 4rem 1.5rem; /* Passe de 9rem à 1.5rem sur les côtés */
-    }
-    .prestations-modalites {
-        padding: 3rem 1.5rem;
-    }
-    .inscription {
-        padding: 3rem 1.5rem;
-        /* Le minmax(400px) initial casse les petits téléphones, on force 1 colonne : */
-        grid-template-columns: 1fr; 
-    }
-    .inscription-adh {
-        padding: 3rem 1.5rem;
-    }
-
-    /* 2. PRÉSENTATION (Accueil) */
+    .presentation-content h3 { font-size: 75%; }
+    
     .presentation {
         grid-template-columns: 1fr; /* Empile le texte et l'image */
         gap: 2.5rem;
@@ -595,35 +525,53 @@ main {
     .presentation-visual img {
         max-height: 400px;
         width: 100%;
-        object-fit: cover; /* Empêche l'image de se déformer */
+        object-fit: cover;
     }
     .presentation-content p {
-        max-width: 100%; /* Laisse le texte prendre toute la largeur dispo */
+        max-width: 100%;
     }
 
-    /* 3. MODALITÉS (Section Texte + Cartes) */
+
+
+    .bento-prestations {
+        padding-bottom: 10%;
+    }
+
+    .bento-card {
+        /* On annule la hauteur fixe du PC pour utiliser l'aspect-ratio fluide */
+        height: auto; 
+        aspect-ratio: 1 / 1.2; 
+    }
+
+
+
     .grille-modalites {
-        grid-template-columns: 1fr; /* Empile la colonne de gauche et de droite */
+        grid-template-columns: 1fr; 
         gap: 3rem;
     }
-    #event-client {
-        flex-direction: column; /* Empile les cartes "Nos évènements" et "Nos clients" */
-    }
+    
     #invitation p {
         max-width: 100%;
     }
 
-    /* 4. FORMULAIRE D'ADHÉSION */
+    #event-client {
+        flex-direction: column; 
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    #event-client .list {
+        max-width: 100%;
+        width: 100%;
+    }
+
+
+
     .form-row-double {
-        flex-direction: column; /* Met les champs l'un sous l'autre */
+        flex-direction: column; /* Empile les champs Nom/Prénom etc. */
         gap: 1.5rem;
     }
     .formulaire-adhesion {
-        padding: 1.5rem; /* Réduit un peu l'espace intérieur du cadre blanc */
-    }
-
-    /* 5. GRILLE BENTO */
-    .bento-card {
-        height: 300px; 
+        padding: 1.5rem; 
     }
 }
