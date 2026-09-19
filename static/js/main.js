@@ -45,12 +45,8 @@ const burgerBtn = document.getElementById('burger-btn');
 const nav = document.querySelector('.header-nav-mobile');
 
 burgerBtn.addEventListener('click', () => {
+    // Un seul bloc qui gère les 3 actions simultanément
     nav.classList.toggle('nav-active');
     burgerBtn.classList.toggle('toggle');
-});
-
-burgerBtn.addEventListener('click', () => {
-    nav.classList.toggle('nav-active');
-    burgerBtn.classList.toggle('toggle');
-    document.body.classList.toggle('no-scroll'); /* Bloque ou débloque le défilement du site */
+    document.body.classList.toggle('no-scroll');
 });
