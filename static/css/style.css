@@ -54,11 +54,14 @@
 /* ==========================================================================
    Composants globaux
    ========================================================================== */
-  
+
+* { box-sizing: border-box; }
+
 html { scroll-behavior: smooth; }
 
-* {
-    box-sizing: border-box;
+html, body {
+    overflow-x: hidden; /* C'est le coup de ciseaux magique : coupe tout ce qui dépasse à gauche ou à droite */
+    width: 100%;
 }
 
 body {
