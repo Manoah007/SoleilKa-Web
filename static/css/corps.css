@@ -390,21 +390,20 @@ main {
 /* ========================================= */
 
 
+
 .inscription-adh {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 3rem; /* Espace entre le bloc de texte et le formulaire */
-    padding: 4rem 1rem; /* Réduction du padding latéral pour les petits écrans */
+    max-width: 100%;
 }
 
-/* 2. La partie Texte (Au centre) */
 .grille-adhesion {
-    text-align: center; /* Centre le texte lui-même */
-    max-width: 600px; /* Évite que la phrase soit trop étirée et difficile à lire */
+    text-align: center;
+    max-width: 600px;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centre le bouton sous le texte */
+    align-items: center;
 }
 
 .grille-adhesion h2 {
@@ -423,7 +422,6 @@ main {
     margin-bottom: 2rem;
 }
 
-
 .formulaire-adhesion {
     background-color: #ffffff;
     padding: 2.5rem;
@@ -437,13 +435,11 @@ main {
     max-width: 900px; 
 }
 
-
 .form-row-double {
     display: flex;
     gap: 1.5rem;
 }
 
-/* Chaque champ prend 50% de l'espace dans une ligne double */
 .form-row-double > * {
     flex: 1;
 }
@@ -473,7 +469,6 @@ main {
     background-color: #ffffff;
 }
 
-/* 6. La section RGPD */
 .form-rgpd {
     display: flex;
     align-items: flex-start; /* Aligne la case avec la 1ère ligne du texte */
@@ -496,11 +491,19 @@ main {
 }
 
 
+
+
+
+
+
 /* =========================================================
    RESPONSIVE GLOBAL (Mobiles et Tablettes jusqu'à 900px)
 ========================================================= */
 @media (max-width: 900px) {
 
+    body { 
+        padding-top: 20%;
+    }
 
     .prestations-section { padding: 4rem 1.5rem; }
     .prestations-modalites { padding: 3rem 1.5rem; }
@@ -508,6 +511,7 @@ main {
         padding: 3rem 1.5rem; 
         grid-template-columns: 1fr; /* Force 1 colonne sur mobile */
     }
+
     .inscription-adh { padding: 3rem 1.5rem; }
     
     #modalite { 
@@ -557,12 +561,15 @@ main {
     #event-client {
         flex-direction: column; 
         align-items: center;
+        width: 100%;
         gap: 1.5rem;
     }
 
     #event-client .list {
         max-width: 100%;
         width: 100%;
+        margin: 0;
+        padding: 1.5rem;
     }
 
 
