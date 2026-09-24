@@ -55,7 +55,7 @@ footer {
     font-style: normal;
 }
 
-.footer-contact h3:nth-of-type(1) {
+.footer-contact h3 {
     grid-column: 1 / 3;
     grid-row: 1;
     color: var(--color-accent);
@@ -89,7 +89,7 @@ footer {
     width: 0;
     height: 3px;
     background-color: #ffffff;
-    transition: width 0.3s ease;
+    transition: width 0.3s ease, left 0.3s ease, transform 0.3s ease;
 }
 
 .footer-contact a:hover::after {
@@ -146,10 +146,7 @@ formulaire de contact
     margin-bottom: 2rem;
 }
 
-.footer-form-description .btn-outline {
-    margin-left: 1rem;
-    filter: invert(100%);
-}
+
 .formulaire-contact {
     flex: 1;
     max-width: 600px;
@@ -315,29 +312,30 @@ formulaire de contact
 
 @media (max-width: 900px) {
 
-    /*=== SECTION CONTACT ===*/
     .footer-contact {
         display: flex;
         flex-direction: column;
-        align-items: center; 
-        text-align: center; 
-        gap: 2rem; /* J'ai mis 2rem pour bien séparer Email, Tel et Insta */
+        align-items: center;
+        text-align: center;
         padding: 0 1.5rem;
     }
 
-    .footer-contact h3:nth-of-type(1) {
+    .footer-contact h3 {
         margin-bottom: 0.5rem;
     }
 
-    /* On s'assure que les 3 blocs (Email, Tel, Insta) se comportent pareil */
     .footer-contact .email,
     .footer-contact .tel,
     .footer-contact .reseaux-sociaux {
-        display: block; 
+        display: block;
         width: 100%;
     }
 
-    /* Animation du soulignement qui part du centre */
+    .footer-contact .email,
+    .footer-contact .tel {
+        margin-bottom: 1.5rem;
+    }
+
     .footer-contact a::after {
         left: 50%;
         transform: translateX(-50%);
@@ -355,7 +353,7 @@ formulaire de contact
         max-width: 100%;
     }
 
-    .footer-form-description .btn-outline {
+    .footer-form-description .btn-accent {
         margin-left: 0;
     }
 
